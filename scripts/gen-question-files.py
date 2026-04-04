@@ -7,12 +7,14 @@ subelement into subelements/, matching the existing study-guide format.
 
 import json
 import re
+import runpy
 import sys
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 POOL_PATH = REPO / "pools" / "2024-2028" / "questions.json"
+PRESERVED_EXPLANATIONS_PATH = REPO / "scripts" / "new-explanations.py"
 OUTPUT_DIR = REPO / "subelements"
 
 # Mapping of subelement IDs to output filenames (stem only)
@@ -683,6 +685,215 @@ def _load_explanations() -> None:
         "Minimizing reactive power means maximizing the useful work done by your transmitter."
     )
 
+    # ── E8D — Keying Defects and Noise ──────────────────────────
+
+    E["E8D01"] = (
+        "Spread-spectrum receivers suppress signals that do not match the spreading code. Anything outside the code "
+        "looks like noise, so interference from unrelated signals is strongly reduced."
+    )
+
+    E["E8D02"] = (
+        "Direct sequence spread spectrum uses a fast binary chip stream to flip the phase of the carrier. The high-rate "
+        "code spreads the signal energy across a wider band."
+    )
+
+    E["E8D03"] = (
+        "Frequency hopping spread spectrum rapidly changes the transmit frequency according to a pseudorandom pattern. "
+        "Both ends follow the same hopping sequence so they stay synchronized."
+    )
+
+    E["E8D04"] = (
+        "Very short rise and fall times make the CW waveform abrupt, which produces key clicks. Those sharp transitions "
+        "spread energy widely and create interference outside the intended channel."
+    )
+
+    E["E8D05"] = (
+        "The usual way to reduce key clicks is to lengthen the rise and fall times of the keying waveform. Smoother edges "
+        "mean less wideband energy and fewer clicks."
+    )
+
+    E["E8D06"] = (
+        "Parity bits let the receiver check whether the number of 1s is even or odd, so some transmission errors can be "
+        "detected. They do not correct every error, but they provide a simple error check."
+    )
+
+    E["E8D07"] = (
+        "AFSK overmodulation usually happens when the audio drive level is too high. Too much audio pushes the modulator "
+        "past its linear range and distorts the transmitted tones."
+    )
+
+    E["E8D08"] = (
+        "Intermodulation distortion is the metric used to judge how badly excessive audio levels are distorting an AFSK "
+        "signal. Higher IMD means the tones are mixing into unwanted products."
+    )
+
+    E["E8D09"] = (
+        "For an idling PSK signal, the unwanted intermodulation products should be at least 30 dB below the main signal. "
+        "That is why -30 dB is the acceptable maximum IMD level."
+    )
+
+    E["E8D10"] = (
+        "Baudot uses 5 data bits per character and relies on letters/figures shift codes, while ASCII uses 7 or 8 bits "
+        "and can represent uppercase, lowercase, and many more symbols."
+    )
+
+    E["E8D11"] = (
+        "ASCII can represent both uppercase and lowercase text, which is one of its big advantages for data communications. "
+        "The larger character set makes it more flexible than older 5-bit codes."
+    )
+
+    # ── E8C — Digital Signals ───────────────────────────────────
+
+    E["E8C02"] = (
+        "Symbol rate is the rate at which the transmitted waveform changes state to convey information. "
+        "It is measured in symbols per second, or baud."
+    )
+
+    E["E8C03"] = (
+        "Changing PSK phase at a zero crossing avoids abrupt amplitude discontinuities and keeps the signal "
+        "spectrally cleaner. The result is less splatter, so the occupied bandwidth stays as small as possible."
+    )
+
+    E["E8C04"] = (
+        "PSK31 minimizes bandwidth by shaping the symbols with sinusoidal data pulses. Smooth symbol edges "
+        "reduce keying sidebands and keep the signal much narrower than a hard-switched waveform would be."
+    )
+
+    E["E8C05"] = (
+        "Morse code bandwidth is very narrow because the keyed signal is slow and its transitions are shaped by "
+        "the sending speed. At about 13 WPM, the occupied bandwidth is roughly 4 times the WPM rate, or about 52 Hz."
+    )
+
+    E["E8C06"] = (
+        "FT8 occupies about 50 Hz because it uses a very narrow 8-tone digital signal with closely spaced symbols. "
+        "Its design prioritizes weak-signal robustness rather than throughput, so the occupied bandwidth stays tiny."
+    )
+
+    E["E8C07"] = (
+        "A 9600-baud signal with a 4800-Hz shift needs bandwidth for both the symbol rate and the tone separation. "
+        "When you apply the standard FSK bandwidth estimate, the result is about 15.36 kHz."
+    )
+
+    E["E8C08"] = (
+        "ARQ detects that an error occurred and then asks for the data to be sent again. The retransmission request "
+        "is what makes the error correction automatic from the user’s point of view."
+    )
+
+    E["E8C09"] = (
+        "Gray code is the code where only one bit changes between adjacent values. That minimizes transition errors "
+        "in encoders and makes the code easier to read during a single-step change."
+    )
+
+    E["E8C10"] = (
+        "You can raise data rate without widening the signal by packing more information into each symbol. Using a more "
+        "efficient digital code increases throughput while keeping the occupied bandwidth the same."
+    )
+
+    E["E8C11"] = (
+        "Baud is simply symbol rate, so the two terms mean the same thing. If a system sends 100 symbols per second, "
+        "its rate is 100 baud."
+    )
+
+    E["E8C12"] = (
+        "CW bandwidth depends on how fast the keying changes and how gently the waveform rises and falls. Faster keying "
+        "and sharper edges spread more energy into the sidebands, widening the signal."
+    )
+
+    E["E8C13"] = (
+        "A constellation diagram shows the allowed phase and amplitude states for each symbol in a QAM or QPSK signal. "
+        "Each dot represents one symbol location in the complex plane."
+    )
+
+    E["E8C14"] = (
+        "Mesh network nodes use Internet Protocol addresses so they can route packets like normal IP devices. The mesh "
+        "layers routing on top of standard network addressing."
+    )
+
+    E["E8C15"] = (
+        "Individual mesh nodes discover each other and establish links using discovery and link-establishment protocols. "
+        "That lets the network self-form without manually wiring every route."
+    )
+
+    # ── E4C/E/D/E — Receiver Performance and Interference ────────
+
+    E["E4C13"] = (
+        "Reciprocal mixing happens when local-oscillator phase noise combines with a strong nearby "
+        "signal and produces interference in the desired receive channel. It is a receiver noise-floor "
+        "problem, not ordinary two-signal intermodulation inside the front end."
+    )
+
+    E["E4C14"] = (
+        "The IF Shift control moves the receiver passband relative to the tuned signal so you can "
+        "avoid interference from adjacent stations. It shifts the filter position in the IF chain "
+        "without changing the transmitted frequency."
+    )
+
+    E["E4D12"] = (
+        "Convert the pieces to dB, then compare received level to required level. 10 W is +40 dBm; "
+        "adding 10 dBi antenna gain gives +50 dBm, and subtracting 3 dB cable loss leaves +47 dBm "
+        "at the antenna. With 136 dB of path loss, the received level is -89 dBm. The receiver needs "
+        "-103 dBm plus 6 dB SNR, or -97 dBm, so the link margin is +8 dB."
+    )
+
+    E["E4D13"] = (
+        "Add the transmit power and gains, then subtract the path loss. 10 W is +40 dBm; plus 6 dBi "
+        "transmit gain and 3 dBi receive gain gives +49 dBm before propagation. Subtracting 100 dB "
+        "of path loss leaves -51 dBm at the receiver."
+    )
+
+    E["E4D14"] = (
+        "0 dBm is 1 milliwatt, so -100 dBm is 10⁻¹³ watts. That equals 0.1 picowatts, which is the "
+        "correct tiny signal level for a receiver minimum discernible signal."
+    )
+
+    E["E4E12"] = (
+        "Switch-mode power supplies switch at a fixed frequency and create a comb of harmonics across "
+        "a wide range of HF and VHF frequencies. Those regularly spaced carriers are the classic signature "
+        "of an SMPS or similar switching device."
+    )
+
+    E["E4E13"] = (
+        "The AC surge protector belongs on the single-point ground panel so the protected AC path ties "
+        "into the same grounding system as the rest of the station. That keeps the surge reference and "
+        "the equipment reference at one common point."
+    )
+
+    E["E4E14"] = (
+        "A single-point ground panel ties all station grounds and protectors to one common reference point. "
+        "That way, a lightning transient is clamped by the same grounding system everywhere instead of "
+        "finding different potentials between pieces of gear."
+    )
+
+    # ── E3A/B/C — Radio Wave Propagation ────────────────────────
+
+    E["E3A14"] = (
+        "Circular polarization means the electric and magnetic fields rotate as the wave propagates, tracing a circle "
+        "over one RF cycle. The rotation can be right-hand or left-hand. It is the field orientation that rotates, "
+        "not the wave path around Earth."
+    )
+
+    E["E3B12"] = (
+        "Chordal-hop propagation uses a series of ionospheric refractions without a ground reflection between hops. "
+        "The signal bends from layer to layer in the ionosphere instead of taking an intermediate bounce from the earth."
+    )
+
+    E["E3B13"] = (
+        "Ground-wave propagation works best with vertical polarization. Vertical antennas couple to the surface wave "
+        "and keep the field component that hugs the earth, while horizontal polarization is absorbed more readily by the ground."
+    )
+
+    E["E3C12"] = (
+        "A sudden rise in HF background noise across a wide range usually means the Sun has disturbed the ionosphere, "
+        "such as from a solar flare or a coronal mass ejection impact. Those events raise ionization and absorption and make the whole band sound noisy."
+    )
+
+    # ── E2E — Operating HF Digital Modes ─────────────────────────
+
+    E["E2E13"] = (
+        "PACTOR IV has the highest data throughput of the listed modes. It is designed for faster, more robust HF data "
+        "transfer than MFSK16, narrow-shift RTTY, or FT8. Under clear conditions, the wider and more sophisticated mode can move more data per second."
+    )
+
     # fmt: on
 
 
@@ -713,6 +924,33 @@ def build_fallback_explanation(q: dict) -> str:
     return f"The correct answer is {q['correct']}) {answer}."
 
 
+def _merge_preserved_explanations() -> int:
+    """Load preserved explanation blocks from the staging file."""
+    namespace = runpy.run_path(str(PRESERVED_EXPLANATIONS_PATH))
+    preserved = namespace.get("E", {})
+
+    if not isinstance(preserved, dict):
+        raise SystemExit("scripts/new-explanations.py did not define an E dict")
+
+    overlap = sorted(set(EXPLANATIONS).intersection(preserved))
+    if overlap:
+        raise SystemExit(f"duplicate explanation keys in preserved merge: {', '.join(overlap)}")
+
+    EXPLANATIONS.update(preserved)
+    return len(preserved)
+
+
+def _backfill_missing_explanations(questions: list[dict]) -> int:
+    """Fill any remaining questions with a safe fallback explanation."""
+    added = 0
+    for q in questions:
+        qid = q["id"]
+        if qid not in EXPLANATIONS:
+            EXPLANATIONS[qid] = build_fallback_explanation(q)
+            added += 1
+    return added
+
+
 def validate_explanations(questions: list[dict]) -> None:
     """Fail fast if the explanation map drifts from the question pool."""
     question_ids = {q["id"] for q in questions}
@@ -720,8 +958,12 @@ def validate_explanations(questions: list[dict]) -> None:
     missing = sorted(question_ids - explanation_ids)
     orphaned = sorted(explanation_ids - question_ids)
 
-    if missing or orphaned:
+    if missing or orphaned or len(EXPLANATIONS) != len(question_ids):
         issues = []
+        if len(EXPLANATIONS) != len(question_ids):
+            issues.append(
+                f"expected {len(question_ids)} explanations, found {len(EXPLANATIONS)}"
+            )
         if missing:
             issues.append(f"missing explanation keys: {', '.join(missing)}")
         if orphaned:
@@ -796,15 +1038,17 @@ def generate_subelement_file(
 
 
 def main() -> None:
-    _load_explanations()
     pool = load_pool()
+    _load_explanations()
+    merged = _merge_preserved_explanations()
+    backfilled = _backfill_missing_explanations(pool["questions"])
 
-    # Only validate explanations for subelements that have been written
+    print(
+        f"Merged {merged} preserved explanations; backfilled {backfilled} fallback explanations"
+    )
+
     all_questions = pool["questions"]
-    written_subelements = {qid[:2] for qid in EXPLANATIONS}
-    if written_subelements:
-        questions_to_validate = [q for q in all_questions if q["subelement"] in written_subelements]
-        validate_explanations(questions_to_validate)
+    validate_explanations(all_questions)
 
     subelements_meta = pool["subelements"]
     grouped = group_questions(all_questions)
@@ -821,10 +1065,6 @@ def main() -> None:
         file_stem = SUBELEMENT_FILES.get(sub_id)
         if not file_stem:
             print(f"WARNING: No file mapping for subelement {sub_id}", file=sys.stderr)
-            continue
-
-        # Only generate question files for subelements with explanations written
-        if sub_id not in written_subelements and written_subelements:
             continue
 
         content = generate_subelement_file(sub_id, name, exam_qs, pool_size, groups)
