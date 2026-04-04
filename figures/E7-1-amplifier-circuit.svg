@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 550" width="700" height="550">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    .comp { font-size: 13px; font-weight: bold; }
+    .val { font-size: 11px; fill: #555; }
+  </style>
+  <rect width="700" height="550" fill="white"/>
+
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold">Figure E7-1: Common-Emitter Amplifier with Voltage Divider Bias</text>
+
+  <!-- Vcc rail -->
+  <line x1="120" y1="80" x2="480" y2="80" stroke="black" stroke-width="2"/>
+  <text x="500" y="84" font-size="13" font-weight="bold">Vcc</text>
+  <text x="500" y="100" font-size="11">(+12V)</text>
+
+  <!-- Ground rail -->
+  <line x1="120" y1="460" x2="480" y2="460" stroke="black" stroke-width="2"/>
+  <!-- Ground symbol -->
+  <line x1="300" y1="460" x2="300" y2="475" stroke="black" stroke-width="2"/>
+  <line x1="285" y1="475" x2="315" y2="475" stroke="black" stroke-width="2"/>
+  <line x1="290" y1="480" x2="310" y2="480" stroke="black" stroke-width="1.5"/>
+  <line x1="295" y1="485" x2="305" y2="485" stroke="black" stroke-width="1"/>
+
+  <!-- R1: from Vcc to base node (upper bias resistor) -->
+  <line x1="200" y1="80" x2="200" y2="120" stroke="black" stroke-width="2"/>
+  <!-- Resistor zigzag R1 -->
+  <polyline points="200,120 192,128 208,140 192,152 208,164 192,176 208,188 200,196" fill="none" stroke="black" stroke-width="2"/>
+  <line x1="200" y1="196" x2="200" y2="260" stroke="black" stroke-width="2"/>
+  <text x="215" y="160" class="comp">R1</text>
+
+  <!-- R2: from base node to ground (lower bias resistor) -->
+  <line x1="200" y1="260" x2="200" y2="300" stroke="black" stroke-width="2"/>
+  <!-- Resistor zigzag R2 -->
+  <polyline points="200,300 192,308 208,320 192,332 208,344 192,356 208,368 200,376" fill="none" stroke="black" stroke-width="2"/>
+  <line x1="200" y1="376" x2="200" y2="460" stroke="black" stroke-width="2"/>
+  <text x="215" y="340" class="comp">R2</text>
+
+  <!-- Junction from R1/R2 to base -->
+  <circle cx="200" cy="260" r="3" fill="black"/>
+  <line x1="200" y1="260" x2="280" y2="260" stroke="black" stroke-width="2"/>
+
+  <!-- C1: Input coupling capacitor -->
+  <line x1="50" y1="260" x2="90" y2="260" stroke="black" stroke-width="2"/>
+  <!-- Capacitor symbol -->
+  <line x1="90" y1="240" x2="90" y2="280" stroke="black" stroke-width="2.5"/>
+  <line x1="100" y1="240" x2="100" y2="280" stroke="black" stroke-width="2.5"/>
+  <line x1="100" y1="260" x2="200" y2="260" stroke="black" stroke-width="2"/>
+  <text x="95" y="233" text-anchor="middle" class="comp">C1</text>
+  <text x="30" y="264" font-size="12" font-weight="bold">Vin</text>
+
+  <!-- Q1: NPN Transistor -->
+  <!-- Base input at (280, 260) -->
+  <line x1="280" y1="260" x2="310" y2="260" stroke="black" stroke-width="2"/>
+  <!-- Vertical bar -->
+  <line x1="310" y1="220" x2="310" y2="300" stroke="black" stroke-width="3"/>
+  <!-- Collector going up -->
+  <line x1="310" y1="235" x2="360" y2="195" stroke="black" stroke-width="2"/>
+  <line x1="360" y1="195" x2="360" y2="170" stroke="black" stroke-width="2"/>
+  <!-- Emitter going down with arrow -->
+  <line x1="310" y1="285" x2="360" y2="325" stroke="black" stroke-width="2"/>
+  <polygon points="345,314 360,325 350,305" fill="black"/>
+  <line x1="360" y1="325" x2="360" y2="340" stroke="black" stroke-width="2"/>
+  <text x="335" y="255" class="comp">Q1</text>
+
+  <!-- Rc: Collector resistor (from Vcc to collector) -->
+  <line x1="360" y1="80" x2="360" y2="100" stroke="black" stroke-width="2"/>
+  <!-- Resistor zigzag Rc -->
+  <polyline points="360,100 352,108 368,120 352,132 368,144 352,156 368,168 360,176" fill="none" stroke="black" stroke-width="2"/>
+  <!-- Connect to collector -->
+  <line x1="360" y1="170" x2="360" y2="176" stroke="black" stroke-width="2"/>
+  <text x="380" y="140" class="comp">Rc</text>
+
+  <!-- R3: Emitter resistor -->
+  <line x1="360" y1="340" x2="360" y2="360" stroke="black" stroke-width="2"/>
+  <!-- Resistor zigzag R3 -->
+  <polyline points="360,360 352,368 368,380 352,392 368,404 352,416 368,428 360,436" fill="none" stroke="black" stroke-width="2"/>
+  <line x1="360" y1="436" x2="360" y2="460" stroke="black" stroke-width="2"/>
+  <text x="380" y="400" class="comp">R3</text>
+
+  <!-- Junction at collector for output -->
+  <circle cx="360" cy="170" r="3" fill="black"/>
+
+  <!-- C2: Output coupling capacitor -->
+  <line x1="360" y1="170" x2="440" y2="170" stroke="black" stroke-width="2"/>
+  <!-- Capacitor symbol -->
+  <line x1="440" y1="150" x2="440" y2="190" stroke="black" stroke-width="2.5"/>
+  <line x1="450" y1="150" x2="450" y2="190" stroke="black" stroke-width="2.5"/>
+  <line x1="450" y1="170" x2="550" y2="170" stroke="black" stroke-width="2"/>
+  <text x="445" y="143" text-anchor="middle" class="comp">C2</text>
+  <text x="560" y="174" font-size="12" font-weight="bold">Vout</text>
+
+  <!-- Component descriptions -->
+  <rect x="20" y="490" width="660" height="50" fill="#f8f8f8" stroke="#ccc" rx="4"/>
+  <text x="350" y="510" text-anchor="middle" font-size="11">R1, R2 = Voltage divider bias network | R3 = Emitter stabilization resistor</text>
+  <text x="350" y="528" text-anchor="middle" font-size="11">C1 = Input coupling capacitor | C2 = Output coupling capacitor | Rc = Collector load resistor</text>
+</svg>

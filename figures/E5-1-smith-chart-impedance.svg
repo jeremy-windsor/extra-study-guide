@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+  </style>
+  <rect width="700" height="700" fill="white"/>
+
+  <defs>
+    <clipPath id="chartClip">
+      <circle cx="350" cy="350" r="250"/>
+    </clipPath>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-size="18" font-weight="bold">Figure E5-1: Smith Chart</text>
+  <text x="350" y="50" text-anchor="middle" font-size="13">Normalized to Z0 = 50 ohms</text>
+
+  <!-- Outer boundary circle (r=0, pure reactance boundary) -->
+  <circle cx="350" cy="350" r="250" fill="none" stroke="black" stroke-width="2"/>
+
+  <!-- Resistance circles (constant R) -->
+  <!-- R=0: center at (100,350), radius 250 -->
+  <!-- Already drawn as outer circle -->
+
+  <!-- R=0.2: center at (100+250*0.2/(1+0.2), 350) = (141.67, 350), radius=250/(1+0.2)=208.33 -->
+  <circle cx="391.67" cy="350" r="208.33" fill="none" stroke="#666" stroke-width="0.5" clip-path="url(#chartClip)"/>
+
+  <!-- R=0.5: center at (100+250*0.5/1.5, 350) = (183.33, 350), radius=250/1.5=166.67 -->
+  <circle cx="433.33" cy="350" r="166.67" fill="none" stroke="#666" stroke-width="0.7" clip-path="url(#chartClip)"/>
+
+  <!-- R=1.0: center at (100+250*1/2, 350) = (225, 350), radius=250/2=125 -->
+  <circle cx="475" cy="350" r="125" fill="none" stroke="black" stroke-width="1" clip-path="url(#chartClip)"/>
+
+  <!-- R=2.0: center at (100+250*2/3, 350) = (266.67, 350), radius=250/3=83.33 -->
+  <circle cx="516.67" cy="350" r="83.33" fill="none" stroke="#666" stroke-width="0.7" clip-path="url(#chartClip)"/>
+
+  <!-- R=5.0: center at (100+250*5/6, 350) = (308.33, 350), radius=250/6=41.67 -->
+  <circle cx="558.33" cy="350" r="41.67" fill="none" stroke="#666" stroke-width="0.5" clip-path="url(#chartClip)"/>
+
+  <!-- R=10: center at (100+250*10/11, 350), radius=250/11=22.73 -->
+  <circle cx="577.27" cy="350" r="22.73" fill="none" stroke="#666" stroke-width="0.4" clip-path="url(#chartClip)"/>
+
+  <!-- Reactance arcs (constant X) - upper half (inductive, +jX) -->
+  <!-- X=0.2: center at (600, 350-250/0.2)=(600, -900), radius=250/0.2=1250 -->
+  <circle cx="600" cy="-900" r="1250" fill="none" stroke="#666" stroke-width="0.5" clip-path="url(#chartClip)"/>
+
+  <!-- X=0.5: center at (600, 350-500)=(600, -150), radius=500 -->
+  <circle cx="600" cy="-150" r="500" fill="none" stroke="#666" stroke-width="0.7" clip-path="url(#chartClip)"/>
+
+  <!-- X=1.0: center at (600, 350-250)=(600, 100), radius=250 -->
+  <circle cx="600" cy="100" r="250" fill="none" stroke="black" stroke-width="1" clip-path="url(#chartClip)"/>
+
+  <!-- X=2.0: center at (600, 350-125)=(600, 225), radius=125 -->
+  <circle cx="600" cy="225" r="125" fill="none" stroke="#666" stroke-width="0.7" clip-path="url(#chartClip)"/>
+
+  <!-- X=5.0: center at (600, 350-50)=(600, 300), radius=50 -->
+  <circle cx="600" cy="300" r="50" fill="none" stroke="#666" stroke-width="0.5" clip-path="url(#chartClip)"/>
+
+  <!-- Reactance arcs - lower half (capacitive, -jX) -->
+  <!-- X=-0.2 -->
+  <circle cx="600" cy="1600" r="1250" fill="none" stroke="#666" stroke-width="0.5" clip-path="url(#chartClip)"/>
+
+  <!-- X=-0.5 -->
+  <circle cx="600" cy="850" r="500" fill="none" stroke="#666" stroke-width="0.7" clip-path="url(#chartClip)"/>
+
+  <!-- X=-1.0 -->
+  <circle cx="600" cy="600" r="250" fill="none" stroke="black" stroke-width="1" clip-path="url(#chartClip)"/>
+
+  <!-- X=-2.0 -->
+  <circle cx="600" cy="475" r="125" fill="none" stroke="#666" stroke-width="0.7" clip-path="url(#chartClip)"/>
+
+  <!-- X=-5.0 -->
+  <circle cx="600" cy="400" r="50" fill="none" stroke="#666" stroke-width="0.5" clip-path="url(#chartClip)"/>
+
+  <!-- Horizontal resistance axis -->
+  <line x1="100" y1="350" x2="600" y2="350" stroke="black" stroke-width="1.5"/>
+
+  <!-- Resistance labels along the axis -->
+  <text x="100" y="340" text-anchor="middle" font-size="10">0</text>
+  <text x="183.33" y="340" text-anchor="middle" font-size="10">0.5</text>
+  <text x="350" y="340" text-anchor="middle" font-size="10">1</text>
+  <text x="433.33" y="340" text-anchor="middle" font-size="10">2</text>
+  <text x="516.67" y="340" text-anchor="middle" font-size="10">5</text>
+  <text x="600" y="340" text-anchor="middle" font-size="10" font-weight="bold">inf</text>
+
+  <!-- Reactance labels around the perimeter -->
+  <text x="604" y="100" font-size="9" fill="#333">j1.0</text>
+  <text x="604" y="225" font-size="9" fill="#333">j2.0</text>
+  <text x="604" y="305" font-size="9" fill="#333">j5.0</text>
+  <text x="570" y="155" font-size="9" fill="#333">j0.5</text>
+  <text x="604" y="600" font-size="9" fill="#333">-j1.0</text>
+  <text x="604" y="475" font-size="9" fill="#333">-j2.0</text>
+  <text x="604" y="400" font-size="9" fill="#333">-j5.0</text>
+  <text x="570" y="550" font-size="9" fill="#333">-j0.5</text>
+
+  <!-- Point A: 400 + j(-300) ohms => normalized: 8 - j6 -->
+  <!-- Very high R, capacitive. On chart near R=8, X=-6 -->
+  <!-- R=8: circle center at (100+250*8/9, 350)=(322.2+100, 350)=(322+100,350), wait -->
+  <!-- Let me recalculate. The chart center of the outer circle is at pixel (350,350), radius=250 -->
+  <!-- For normalized impedance z = r + jx: -->
+  <!-- Gamma = (z-1)/(z+1) -->
+  <!-- Point A: z = 8 - j6, Gamma = (7-j6)/(9-j6) = (7-j6)(9+j6)/((9-j6)(9+j6)) -->
+  <!-- = (63+j42-j54+36)/(81+36) = (99-j12)/117 = 0.846 - j0.103 -->
+  <!-- pixel: (350 + 250*0.846, 350 - 250*(-0.103)) = (561.5, 375.7) -->
+  <circle cx="561" cy="376" r="6" fill="red" stroke="red" stroke-width="2"/>
+  <text x="561" y="400" text-anchor="middle" font-size="12" font-weight="bold" fill="red">A</text>
+
+  <!-- Point B: 300 + j600 ohms => normalized: 6 + j12 -->
+  <!-- Gamma = (5+j12)/(7+j12) = (5+j12)(7-j12)/((7+j12)(7-j12)) -->
+  <!-- = (35-j60+j84+144)/(49+144) = (179+j24)/193 = 0.928 + j0.124 -->
+  <!-- pixel: (350 + 250*0.928, 350 - 250*0.124) = (582, 319) -->
+  <circle cx="582" cy="319" r="6" fill="blue" stroke="blue" stroke-width="2"/>
+  <text x="582" y="307" text-anchor="middle" font-size="12" font-weight="bold" fill="blue">B</text>
+
+  <!-- Point C: 300 - j600 ohms => normalized: 6 - j12 -->
+  <!-- Gamma conjugate of B: 0.928 - j0.124 -->
+  <!-- pixel: (350 + 250*0.928, 350 + 250*0.124) = (582, 381) -->
+  <circle cx="582" cy="381" r="6" fill="green" stroke="darkgreen" stroke-width="2"/>
+  <text x="582" y="403" text-anchor="middle" font-size="12" font-weight="bold" fill="darkgreen">C</text>
+
+  <!-- Point D: 50 + j0 (matched, center) for reference -->
+  <!-- normalized: 1 + j0, Gamma = 0 -->
+  <circle cx="350" cy="350" r="4" fill="black" stroke="black" stroke-width="1"/>
+  <text x="350" y="370" text-anchor="middle" font-size="10" fill="black">Z0</text>
+
+  <!-- Legend -->
+  <rect x="20" y="620" width="660" height="75" fill="#f8f8f8" stroke="#ccc" rx="4"/>
+  <circle cx="40" cy="638" r="5" fill="red"/>
+  <text x="52" y="642" font-size="11">Point A: 400 - j300 ohms (R=400, Xc=300 capacitive)</text>
+  <circle cx="40" cy="658" r="5" fill="blue"/>
+  <text x="52" y="662" font-size="11">Point B: 300 + j600 ohms (R=300, XL=600 inductive)</text>
+  <circle cx="40" cy="678" r="5" fill="green"/>
+  <text x="52" y="682" font-size="11">Point C: 300 - j600 ohms (R=300, Xc=600 capacitive)</text>
+
+  <!-- Axis labels -->
+  <text x="350" y="620" text-anchor="middle" font-size="11" fill="#333">Inductive (+jX) above axis | Capacitive (-jX) below axis</text>
+</svg>

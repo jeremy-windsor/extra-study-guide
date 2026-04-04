@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    .comp { font-size: 14px; font-weight: bold; }
+  </style>
+  <rect width="600" height="400" fill="white"/>
+
+  <text x="300" y="30" text-anchor="middle" font-size="18" font-weight="bold">Figure E7-3: Inverting Op-Amp Amplifier</text>
+  <text x="300" y="50" text-anchor="middle" font-size="13">Voltage Gain = -RF / R1</text>
+
+  <!-- Op-amp triangle -->
+  <polygon points="200,120 200,280 380,200" fill="none" stroke="black" stroke-width="2.5"/>
+
+  <!-- Inverting input (-) label inside -->
+  <text x="210" y="170" font-size="18" font-weight="bold">-</text>
+  <!-- Non-inverting input (+) label inside -->
+  <text x="210" y="245" font-size="18" font-weight="bold">+</text>
+
+  <!-- Vin input line -->
+  <text x="15" y="168" font-size="14" font-weight="bold">Vin</text>
+  <line x1="50" y1="164" x2="80" y2="164" stroke="black" stroke-width="2"/>
+
+  <!-- R1: Input resistor -->
+  <!-- Resistor from Vin to inverting input -->
+  <polyline points="80,164 88,156 100,172 112,156 124,172 136,156 148,172 156,164" fill="none" stroke="black" stroke-width="2"/>
+  <line x1="156" y1="164" x2="200" y2="164" stroke="black" stroke-width="2"/>
+  <text x="118" y="148" text-anchor="middle" class="comp">R1</text>
+
+  <!-- Junction at inverting input (summing junction) -->
+  <circle cx="170" cy="164" r="3" fill="black"/>
+
+  <!-- RF: Feedback resistor (from summing junction to output, going over the op-amp) -->
+  <line x1="170" y1="164" x2="170" y2="100" stroke="black" stroke-width="2"/>
+  <line x1="170" y1="100" x2="210" y2="100" stroke="black" stroke-width="2"/>
+  <!-- Resistor horizontal -->
+  <polyline points="210,100 218,92 230,108 242,92 254,108 266,92 278,108 286,100" fill="none" stroke="black" stroke-width="2"/>
+  <line x1="286" y1="100" x2="420" y2="100" stroke="black" stroke-width="2"/>
+  <line x1="420" y1="100" x2="420" y2="200" stroke="black" stroke-width="2"/>
+  <text x="248" y="86" text-anchor="middle" class="comp">RF</text>
+
+  <!-- Non-inverting input to ground -->
+  <line x1="140" y1="236" x2="200" y2="236" stroke="black" stroke-width="2"/>
+  <line x1="140" y1="236" x2="140" y2="260" stroke="black" stroke-width="2"/>
+  <!-- Ground symbol -->
+  <line x1="128" y1="260" x2="152" y2="260" stroke="black" stroke-width="2"/>
+  <line x1="132" y1="266" x2="148" y2="266" stroke="black" stroke-width="1.5"/>
+  <line x1="136" y1="272" x2="144" y2="272" stroke="black" stroke-width="1"/>
+
+  <!-- Output line -->
+  <line x1="380" y1="200" x2="420" y2="200" stroke="black" stroke-width="2"/>
+  <circle cx="420" cy="200" r="3" fill="black"/>
+  <line x1="420" y1="200" x2="500" y2="200" stroke="black" stroke-width="2"/>
+  <text x="510" y="204" font-size="14" font-weight="bold">Vout</text>
+
+  <!-- Power supply connections (dashed, for reference) -->
+  <line x1="290" y1="120" x2="290" y2="85" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="290" y="78" text-anchor="middle" font-size="11">+V</text>
+  <line x1="290" y1="280" x2="290" y2="315" stroke="black" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="290" y="328" text-anchor="middle" font-size="11">-V</text>
+
+  <!-- Formula box -->
+  <rect x="100" y="340" width="400" height="50" fill="#f8f8f8" stroke="#ccc" rx="4"/>
+  <text x="300" y="362" text-anchor="middle" font-size="13" font-weight="bold">Voltage Gain (Av) = -RF / R1</text>
+  <text x="300" y="380" text-anchor="middle" font-size="11">Negative sign indicates 180-degree phase inversion</text>
+</svg>
