@@ -234,8 +234,9 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
 let currentPage = 'home';
 
 function showPage(page, skipMenu) {
-  if (currentPage === 'section-study' && page !== 'section-study') {
-    resetStudyNarrativeAudio();
+  if (currentPage === 'group-picker' && page !== 'group-picker' && page !== 'section-study') {
+    resetStudyNarrativeAudio({ clearSource: true });
+    setStudyNarrativeAudioVisibility(false);
   }
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -666,21 +667,11 @@ function getStudyNarrativeAudioPath(section) {
 }
 
 function updateStudyAudioButtonState() {
-  const btn = document.getElementById('study-audio-btn');
-  const audio = document.getElementById('study-audio-player');
-  if (!btn || !audio) return;
-
-  const isPlaying = !audio.paused && !audio.ended;
-  btn.classList.toggle('speaking', isPlaying);
-  const label = isPlaying ? 'Pause section narrative audio' : 'Play section narrative audio';
-  btn.setAttribute('aria-label', label);
-  btn.title = label;
+  // No-op: speaker button removed; native audio controls handle play/pause state.
 }
 
 function setStudyNarrativeAudioVisibility(visible) {
-  const btn = document.getElementById('study-audio-btn');
   const wrap = document.getElementById('study-audio-wrap');
-  if (btn) btn.hidden = !visible;
   if (wrap) wrap.hidden = !visible;
 }
 
@@ -1337,6 +1328,8 @@ function showGroupPicker(se) {
   document.getElementById('group-picker-subtitle').textContent =
     `${allQs.length} questions · ${groups.length} groups`;
 
+  configureStudyNarrativeAudio(se);
+
   const list = document.getElementById('group-list');
   let html = '';
 
@@ -1399,7 +1392,6 @@ function startSectionStudy(se, group) {
   const title = group ? group : (shortDesc ? se + ' — ' + shortDesc : seName);
   document.getElementById('study-section-title').textContent = title;
   document.getElementById('study-section-count').textContent = studyQuestions.length + ' questions';
-  configureStudyNarrativeAudio(se);
 
   document.getElementById('study-active').style.display = 'flex';
   document.getElementById('study-complete').style.display = 'none';
