@@ -125,6 +125,11 @@ N-type|N type
 Part 97|part ninety seven
 47 CFR|forty seven C F R
 
+# === Units (additional) ===
+Ω|ohms
+kΩ|kilohms
+MΩ|megohms
+
 # === Math and engineering terms ===
 j-operator|j operator
 XL|X sub L
@@ -136,3 +141,17 @@ Q factor|Q factor
 IEEE|I. triple E.
 coax|co-ax
 Coax|Co-ax
+
+# === Formulas ===
+E = I × R|E equals I times R
+I = E / R|I equals E divided by R
+R = E / I|R equals E divided by I
+P = E × I|P equals E times I
+P = I²R|P equals I squared times R
+P = E²/R|P equals E squared divided by R
+λ = 300/f|lambda equals three hundred divided by frequency in megahertz
+
+# === Special cases ===
+CAT IV|cat 4
+CAT III|cat 3
+CAT II|cat 2
