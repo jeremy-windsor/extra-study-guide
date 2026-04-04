@@ -19,7 +19,7 @@
 - C) 420 watts
 - **D) 286 watts** ✅
 
-> ERP = transmitter power - feed line loss - duplexer loss + antenna gain (over dipole). P_tx = 150W = 10log(150) = 21.76 dBW. Feed line loss = -2 dB. Duplexer loss = -2.2 dB. Antenna gain = 7.2 dBd. ERP (dBW) = 21.76 - 2 - 2.2 + 7.2 = 24.76 dBW. Convert: 10^(24.76/10) = 299 ≈ 286 watts (rounding from the exact given values). ERP is referenced to a dipole, so we use dBd for antenna gain.
+> ERP = transmitter power - feed line loss - duplexer loss + antenna gain (over dipole). P_tx = 150W = 10log(150) = 21.76 dBW. Feed line loss = -2 dB. Duplexer loss = -2.2 dB. Antenna gain = +7 dBd. ERP (dBW) = 21.76 - 2 - 2.2 + 7 = 24.56 dBW. Convert: 10^(24.56/10) ≈ 286 watts. ERP is referenced to a dipole, so we use dBd for antenna gain.
 
 ### E9A03
 **What term describing total radiated power takes into account all gains and losses?**
@@ -55,7 +55,7 @@
 - C) 126 watts
 - D) 300 watts
 
-> ERP = P_tx - feed loss - duplexer loss + antenna gain (dBd). P_tx = 200W = 23.01 dBW. Feed line = -4 dB. Duplexer = -3.2 dB. Antenna = +10 dBd. ERP(dBW) = 23.01 - 4 - 3.2 + 10 = 25.81 dBW. Convert: 10^(25.81/10) = 381 ≈ 317 watts (using exact problem values). Note: the actual math with the given numbers works out to approximately 317W.
+> ERP = P_tx - feed loss - duplexer loss - circulator loss + antenna gain (dBd). P_tx = 200W = 23.01 dBW. Feed line = -4 dB. Duplexer = -3.2 dB. Circulator = -0.8 dB. Antenna = +10 dBd. ERP(dBW) = 23.01 - 4 - 3.2 - 0.8 + 10 = 25.01 dBW. Convert: 10^(25.01/10) ≈ 317 watts. This is a straight gain-and-loss calculation in dB.
 
 ### E9A07
 **What is the effective isotropic radiated power (EIRP) of a repeater station with 200 watts transmitter power output, 2 dB feed line loss, 2.8 dB duplexer loss, 1.2 dB circulator loss, and 7 dBi antenna gain?**
@@ -64,7 +64,7 @@
 - C) 632 watts
 - D) 63.2 watts
 
-> EIRP = P_tx - feed loss - duplexer loss + antenna gain (dBi). P_tx = 200W = 23.01 dBW. Feed = -2 dB. Duplexer = -2.8 dB. Antenna = 5.7 dBi. EIRP(dBW) = 23.01 - 2 - 2.8 + 5.7 = 23.91 dBW. Convert: 10^(23.91/10) ≈ 246 ≈ 252 watts. EIRP uses dBi (referenced to isotropic), while ERP uses dBd (referenced to dipole). dBi = dBd + 2.15.
+> EIRP = P_tx - feed loss - duplexer loss - circulator loss + antenna gain (dBi). P_tx = 200W = 23.01 dBW. Feed = -2 dB. Duplexer = -2.8 dB. Circulator = -1.2 dB. Antenna = +7 dBi. EIRP(dBW) = 23.01 - 2 - 2.8 - 1.2 + 7 = 24.01 dBW. Convert: 10^(24.01/10) ≈ 252 watts. EIRP uses dBi (referenced to isotropic), while ERP uses dBd (referenced to dipole). dBi = dBd + 2.15.
 
 ### E9A08
 **Which frequency band has the smallest first Fresnel zone?**
