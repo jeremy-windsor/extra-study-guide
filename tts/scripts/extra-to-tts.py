@@ -188,12 +188,13 @@ def convert_cram_sheet(path: str) -> str:
         # Table separator lines
         if re.match(r'^[\|\-:\s]+$', line):
             continue
-        # Table rows
+        # Table rows — add blank line after each for chunking
         if '|' in line:
             cells = [c.strip() for c in line.strip('|').split('|')]
             cells = [c for c in cells if c]
             if cells:
                 spoken.append('. '.join(clean_md(c) for c in cells) + '.')
+                spoken.append('')
             continue
         # Bullet points
         m = re.match(r'^-\s+\*\*(.+?)\*\*:?\s*(.*)', line)
@@ -204,15 +205,24 @@ def convert_cram_sheet(path: str) -> str:
                 spoken.append(f'{term}: {desc}.')
             else:
                 spoken.append(f'{term}.')
+            spoken.append('')
+            continue
+        # Plain bullet points
+        m2 = re.match(r'^-\s+(.*)', line)
+        if m2:
+            spoken.append(clean_md(m2.group(1)) + '.')
+            spoken.append('')
             continue
         # Blockquotes
         if line.startswith('>'):
             spoken.append(clean_md(line))
+            spoken.append('')
             continue
         # Normal lines
         cleaned = clean_md(line)
         if cleaned:
             spoken.append(cleaned)
+            spoken.append('')
 
     return '\n'.join(spoken)
 
