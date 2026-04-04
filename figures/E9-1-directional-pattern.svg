@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 650" width="650" height="650">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+  </style>
+  <rect width="650" height="650" fill="white"/>
+
+  <text x="325" y="25" text-anchor="middle" font-size="18" font-weight="bold">Figure E9-1: Directional Antenna Radiation Pattern</text>
+  <text x="325" y="45" text-anchor="middle" font-size="13">(Azimuth / Horizontal Plane)</text>
+
+  <defs>
+    <clipPath id="polarClip">
+      <circle cx="325" cy="330" r="235"/>
+    </clipPath>
+  </defs>
+
+  <!-- Concentric circles for dB scale -->
+  <circle cx="325" cy="330" r="235" fill="none" stroke="#ccc" stroke-width="1"/>
+  <circle cx="325" cy="330" r="188" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <circle cx="325" cy="330" r="141" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <circle cx="325" cy="330" r="94" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <circle cx="325" cy="330" r="47" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- dB scale labels -->
+  <text x="325" y="102" text-anchor="middle" font-size="9" fill="#888">0 dB</text>
+  <text x="325" y="149" text-anchor="middle" font-size="9" fill="#888">-5 dB</text>
+  <text x="325" y="196" text-anchor="middle" font-size="9" fill="#888">-10 dB</text>
+  <text x="325" y="243" text-anchor="middle" font-size="9" fill="#888">-15 dB</text>
+  <text x="325" y="290" text-anchor="middle" font-size="9" fill="#888">-20 dB</text>
+
+  <!-- Cross lines (axis) -->
+  <line x1="325" y1="95" x2="325" y2="565" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="90" y1="330" x2="560" y2="330" stroke="#ccc" stroke-width="0.5"/>
+  <!-- Diagonal lines -->
+  <line x1="159" y1="164" x2="491" y2="496" stroke="#ccc" stroke-width="0.3"/>
+  <line x1="491" y1="164" x2="159" y2="496" stroke="#ccc" stroke-width="0.3"/>
+
+  <!-- Degree labels -->
+  <text x="325" y="85" text-anchor="middle" font-size="12" font-weight="bold">0&#176;</text>
+  <text x="570" y="334" text-anchor="start" font-size="12" font-weight="bold">90&#176;</text>
+  <text x="325" y="580" text-anchor="middle" font-size="12" font-weight="bold">180&#176;</text>
+  <text x="75" y="334" text-anchor="end" font-size="12" font-weight="bold">270&#176;</text>
+  <text x="502" y="162" font-size="10">45&#176;</text>
+  <text x="502" y="505" font-size="10">135&#176;</text>
+  <text x="140" y="505" font-size="10">225&#176;</text>
+  <text x="140" y="162" font-size="10">315&#176;</text>
+
+  <!-- Main radiation pattern (Yagi-like directional pattern) -->
+  <!-- Main forward lobe pointing at 0 degrees (up), back lobe at 180, small side lobes -->
+  <!-- Using a closed path. Center at 325,330. 0 deg = up = -y -->
+  <!-- Main lobe: ~235 pixels at 0 deg (0dB), 3dB beamwidth ~40 degrees -->
+  <!-- Side lobes at ~60-80 deg: about -15dB = 47px -->
+  <!-- Back lobe at 180: about -18dB = ~38px -->
+  <path d="
+    M 325,95
+    C 340,100 360,130 380,200
+    Q 395,240 420,280
+    C 435,295 440,310 430,320
+    Q 410,330 395,325
+    C 380,320 370,310 365,305
+    Q 355,295 350,310
+    C 345,320 340,330 340,340
+    Q 340,360 345,380
+    C 350,400 355,410 355,420
+    Q 355,440 350,450
+    C 345,460 340,465 335,465
+    Q 325,470 315,465
+    C 310,460 305,450 300,440
+    Q 295,420 300,400
+    C 305,385 310,370 310,350
+    Q 310,330 305,310
+    C 300,295 290,305 285,310
+    Q 275,320 260,325
+    C 245,330 230,325 220,315
+    Q 215,305 225,285
+    C 235,260 255,230 270,200
+    Q 290,130 310,100
+    C 315,95 320,93 325,95
+    Z" fill="none" stroke="black" stroke-width="2.5"/>
+
+  <!-- Annotations -->
+  <!-- Main lobe label -->
+  <line x1="325" y1="130" x2="430" y2="80" stroke="black" stroke-width="1"/>
+  <text x="435" y="78" font-size="12" font-weight="bold">Main Lobe</text>
+  <text x="435" y="92" font-size="11">(Forward direction)</text>
+
+  <!-- 3dB beamwidth annotation -->
+  <!-- At -3dB the pattern is at about 188px radius. Approx +-20 degrees from center -->
+  <!-- -3dB points approximately at angles +-20 deg from 0 (up) -->
+  <line x1="258" y1="154" x2="392" y2="154" stroke="red" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="420" y="158" font-size="11" fill="red" font-weight="bold">3 dB Beamwidth</text>
+
+  <!-- Back lobe label -->
+  <line x1="325" y1="465" x2="440" y2="500" stroke="black" stroke-width="1"/>
+  <text x="445" y="498" font-size="12" font-weight="bold">Back Lobe</text>
+
+  <!-- Side lobe label -->
+  <line x1="430" y1="315" x2="480" y2="290" stroke="black" stroke-width="1"/>
+  <text x="485" y="288" font-size="11" font-weight="bold">Side Lobe</text>
+
+  <!-- Front-to-back ratio annotation -->
+  <text x="325" y="615" text-anchor="middle" font-size="12">Front-to-Back Ratio = Main Lobe (dB) - Back Lobe (dB)</text>
+  <text x="325" y="633" text-anchor="middle" font-size="12">Front-to-Side Ratio = Main Lobe (dB) - Side Lobe (dB)</text>
+</svg>

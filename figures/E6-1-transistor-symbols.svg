@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+    .label { font-size: 13px; font-weight: bold; }
+    .sublabel { font-size: 11px; }
+    .num { font-size: 16px; font-weight: bold; }
+  </style>
+  <rect width="900" height="520" fill="white"/>
+
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold">Figure E6-1: Transistor and FET Schematic Symbols</text>
+
+  <!-- Symbol 1: NPN BJT -->
+  <g transform="translate(70, 120)">
+    <text x="40" y="-15" text-anchor="middle" class="num">1</text>
+    <!-- Base line -->
+    <line x1="0" y1="60" x2="25" y2="60" stroke="black" stroke-width="2"/>
+    <!-- Vertical bar -->
+    <line x1="25" y1="30" x2="25" y2="90" stroke="black" stroke-width="3"/>
+    <!-- Collector -->
+    <line x1="25" y1="42" x2="60" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="15" x2="60" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Emitter with arrow pointing away -->
+    <line x1="25" y1="78" x2="60" y2="105" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="105" x2="60" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Arrow on emitter (pointing away from base) -->
+    <polygon points="48,95 60,105 52,88" fill="black"/>
+    <!-- Labels -->
+    <text x="-5" y="64" text-anchor="end" class="sublabel">B</text>
+    <text x="68" y="8" class="sublabel">C</text>
+    <text x="68" y="118" class="sublabel">E</text>
+    <text x="30" y="150" text-anchor="middle" class="label">NPN</text>
+  </g>
+
+  <!-- Symbol 2: PNP BJT -->
+  <g transform="translate(195, 120)">
+    <text x="40" y="-15" text-anchor="middle" class="num">2</text>
+    <!-- Base line -->
+    <line x1="0" y1="60" x2="25" y2="60" stroke="black" stroke-width="2"/>
+    <!-- Vertical bar -->
+    <line x1="25" y1="30" x2="25" y2="90" stroke="black" stroke-width="3"/>
+    <!-- Collector -->
+    <line x1="25" y1="78" x2="60" y2="105" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="105" x2="60" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Emitter with arrow pointing toward base -->
+    <line x1="25" y1="42" x2="60" y2="15" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="15" x2="60" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Arrow on emitter (pointing toward base) -->
+    <polygon points="37,30 25,42 40,45" fill="black"/>
+    <!-- Labels -->
+    <text x="-5" y="64" text-anchor="end" class="sublabel">B</text>
+    <text x="68" y="118" class="sublabel">C</text>
+    <text x="68" y="8" class="sublabel">E</text>
+    <text x="30" y="150" text-anchor="middle" class="label">PNP</text>
+  </g>
+
+  <!-- Symbol 3: N-channel JFET -->
+  <g transform="translate(320, 120)">
+    <text x="40" y="-15" text-anchor="middle" class="num">3</text>
+    <!-- Gate line -->
+    <line x1="0" y1="60" x2="25" y2="60" stroke="black" stroke-width="2"/>
+    <!-- Arrow on gate pointing inward (N-channel) -->
+    <polygon points="15,54 25,60 15,66" fill="black"/>
+    <!-- Channel (vertical bar) -->
+    <line x1="25" y1="30" x2="25" y2="90" stroke="black" stroke-width="3"/>
+    <!-- Drain -->
+    <line x1="25" y1="30" x2="60" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="30" x2="60" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Source -->
+    <line x1="25" y1="90" x2="60" y2="90" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="90" x2="60" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Labels -->
+    <text x="-5" y="64" text-anchor="end" class="sublabel">G</text>
+    <text x="68" y="8" class="sublabel">D</text>
+    <text x="68" y="118" class="sublabel">S</text>
+    <text x="35" y="150" text-anchor="middle" class="label">N-ch JFET</text>
+  </g>
+
+  <!-- Symbol 4: P-channel JFET -->
+  <g transform="translate(455, 120)">
+    <text x="40" y="-15" text-anchor="middle" class="num">4</text>
+    <!-- Gate line -->
+    <line x1="0" y1="60" x2="25" y2="60" stroke="black" stroke-width="2"/>
+    <!-- Arrow on gate pointing outward (P-channel) -->
+    <polygon points="10,54 0,60 10,66" fill="black"/>
+    <!-- Channel (vertical bar) -->
+    <line x1="25" y1="30" x2="25" y2="90" stroke="black" stroke-width="3"/>
+    <!-- Drain -->
+    <line x1="25" y1="30" x2="60" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="30" x2="60" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Source -->
+    <line x1="25" y1="90" x2="60" y2="90" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="90" x2="60" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Labels -->
+    <text x="-5" y="64" text-anchor="end" class="sublabel">G</text>
+    <text x="68" y="8" class="sublabel">D</text>
+    <text x="68" y="118" class="sublabel">S</text>
+    <text x="35" y="150" text-anchor="middle" class="label">P-ch JFET</text>
+  </g>
+
+  <!-- Symbol 5: N-channel Enhancement MOSFET -->
+  <g transform="translate(70, 340)">
+    <text x="45" y="-15" text-anchor="middle" class="num">5</text>
+    <!-- Gate line -->
+    <line x1="0" y1="60" x2="20" y2="60" stroke="black" stroke-width="2"/>
+    <!-- Gate plate (vertical) -->
+    <line x1="20" y1="25" x2="20" y2="95" stroke="black" stroke-width="2"/>
+    <!-- Insulation gap (space between gate and channel) -->
+    <!-- Channel segments (dashed for enhancement mode) -->
+    <line x1="28" y1="25" x2="28" y2="42" stroke="black" stroke-width="2"/>
+    <line x1="28" y1="48" x2="28" y2="72" stroke="black" stroke-width="2"/>
+    <line x1="28" y1="78" x2="28" y2="95" stroke="black" stroke-width="2"/>
+    <!-- Drain -->
+    <line x1="28" y1="33" x2="65" y2="33" stroke="black" stroke-width="2"/>
+    <line x1="65" y1="33" x2="65" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Source -->
+    <line x1="28" y1="87" x2="65" y2="87" stroke="black" stroke-width="2"/>
+    <line x1="65" y1="87" x2="65" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Body/Substrate connection (arrow pointing in for N-channel) -->
+    <line x1="28" y1="60" x2="65" y2="60" stroke="black" stroke-width="2"/>
+    <polygon points="38,55 28,60 38,65" fill="black"/>
+    <!-- Body connected to source -->
+    <line x1="65" y1="60" x2="65" y2="87" stroke="black" stroke-width="1.5"/>
+    <!-- Labels -->
+    <text x="-5" y="64" text-anchor="end" class="sublabel">G</text>
+    <text x="73" y="8" class="sublabel">D</text>
+    <text x="73" y="118" class="sublabel">S</text>
+    <text x="35" y="150" text-anchor="middle" class="label">N-ch MOSFET</text>
+  </g>
+
+  <!-- Symbol 6: P-channel Enhancement MOSFET -->
+  <g transform="translate(235, 340)">
+    <text x="45" y="-15" text-anchor="middle" class="num">6</text>
+    <!-- Gate line -->
+    <line x1="0" y1="60" x2="20" y2="60" stroke="black" stroke-width="2"/>
+    <!-- Gate plate (vertical) -->
+    <line x1="20" y1="25" x2="20" y2="95" stroke="black" stroke-width="2"/>
+    <!-- Channel segments (dashed for enhancement mode) -->
+    <line x1="28" y1="25" x2="28" y2="42" stroke="black" stroke-width="2"/>
+    <line x1="28" y1="48" x2="28" y2="72" stroke="black" stroke-width="2"/>
+    <line x1="28" y1="78" x2="28" y2="95" stroke="black" stroke-width="2"/>
+    <!-- Drain -->
+    <line x1="28" y1="33" x2="65" y2="33" stroke="black" stroke-width="2"/>
+    <line x1="65" y1="33" x2="65" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Source -->
+    <line x1="28" y1="87" x2="65" y2="87" stroke="black" stroke-width="2"/>
+    <line x1="65" y1="87" x2="65" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Body/Substrate arrow pointing OUT for P-channel -->
+    <line x1="28" y1="60" x2="65" y2="60" stroke="black" stroke-width="2"/>
+    <polygon points="55,55 65,60 55,65" fill="black"/>
+    <!-- Body connected to source -->
+    <line x1="65" y1="60" x2="65" y2="87" stroke="black" stroke-width="1.5"/>
+    <!-- Labels -->
+    <text x="-5" y="64" text-anchor="end" class="sublabel">G</text>
+    <text x="73" y="8" class="sublabel">D</text>
+    <text x="73" y="118" class="sublabel">S</text>
+    <text x="35" y="150" text-anchor="middle" class="label">P-ch MOSFET</text>
+  </g>
+
+  <!-- Symbol 7: N-channel Dual-Gate MOSFET -->
+  <g transform="translate(430, 340)">
+    <text x="45" y="-15" text-anchor="middle" class="num">7</text>
+    <!-- Gate 1 line -->
+    <line x1="0" y1="45" x2="20" y2="45" stroke="black" stroke-width="2"/>
+    <!-- Gate 2 line -->
+    <line x1="0" y1="75" x2="20" y2="75" stroke="black" stroke-width="2"/>
+    <!-- Gate plate 1 (vertical) -->
+    <line x1="20" y1="25" x2="20" y2="55" stroke="black" stroke-width="2"/>
+    <!-- Gate plate 2 (vertical) -->
+    <line x1="20" y1="65" x2="20" y2="95" stroke="black" stroke-width="2"/>
+    <!-- Channel (dashed segments for enhancement mode) -->
+    <line x1="28" y1="25" x2="28" y2="42" stroke="black" stroke-width="2"/>
+    <line x1="28" y1="48" x2="28" y2="72" stroke="black" stroke-width="2"/>
+    <line x1="28" y1="78" x2="28" y2="95" stroke="black" stroke-width="2"/>
+    <!-- Drain -->
+    <line x1="28" y1="33" x2="65" y2="33" stroke="black" stroke-width="2"/>
+    <line x1="65" y1="33" x2="65" y2="0" stroke="black" stroke-width="2"/>
+    <!-- Source -->
+    <line x1="28" y1="87" x2="65" y2="87" stroke="black" stroke-width="2"/>
+    <line x1="65" y1="87" x2="65" y2="120" stroke="black" stroke-width="2"/>
+    <!-- Body/Substrate arrow pointing in for N-channel -->
+    <line x1="28" y1="60" x2="65" y2="60" stroke="black" stroke-width="2"/>
+    <polygon points="38,55 28,60 38,65" fill="black"/>
+    <!-- Body connected to source -->
+    <line x1="65" y1="60" x2="65" y2="87" stroke="black" stroke-width="1.5"/>
+    <!-- Labels -->
+    <text x="-5" y="49" text-anchor="end" class="sublabel">G1</text>
+    <text x="-5" y="79" text-anchor="end" class="sublabel">G2</text>
+    <text x="73" y="8" class="sublabel">D</text>
+    <text x="73" y="118" class="sublabel">S</text>
+    <text x="35" y="150" text-anchor="middle" class="label">N-ch Dual-Gate</text>
+    <text x="35" y="165" text-anchor="middle" class="label">MOSFET</text>
+  </g>
+
+  <!-- Border note -->
+  <text x="450" y="510" text-anchor="middle" font-size="11" fill="#555">Arrows indicate conventional current flow direction in semiconductor junctions</text>
+</svg>
