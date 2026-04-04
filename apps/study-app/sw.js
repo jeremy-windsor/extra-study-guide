@@ -1,5 +1,7 @@
 // Amateur Extra Class Ham Radio Study PWA - Service Worker
-const CACHE_NAME = 'hamradio-extra-v1';
+const CACHE_PREFIX = 'hamradio-extra-study-app';
+const CACHE_VERSION = '2026-04-04';
+const CACHE_NAME = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const ASSETS = [
   './',
   './index.html',
@@ -10,23 +12,27 @@ const ASSETS = [
   '../../pools/2024-2028/questions.json'
 ];
 const APP_BASE_URL = new URL('./', self.location.href);
+const PRECACHE_URLS = ASSETS.map(path => new URL(path, APP_BASE_URL).href);
+const PRECACHE_URL_SET = new Set(PRECACHE_URLS);
 const OFFLINE_URL = new URL('./index.html', APP_BASE_URL).href;
-const PRECACHE_URLS = new Set(ASSETS.map(path => new URL(path, APP_BASE_URL).href));
 
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
-  );
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const requests = PRECACHE_URLS.map(url => new Request(url, { cache: 'reload' }));
+    await cache.addAll(requests);
+  })());
   self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    )
-  );
-  self.clients.claim();
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    const staleKeys = keys.filter(key => key.startsWith(`${CACHE_PREFIX}-`) && key !== CACHE_NAME);
+
+    await Promise.all(staleKeys.map(key => caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
 
 self.addEventListener('fetch', event => {
@@ -42,7 +48,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (!PRECACHE_URLS.has(requestUrl.href)) return;
+  if (!PRECACHE_URL_SET.has(requestUrl.href)) return;
 
   event.respondWith(
     caches.match(requestUrl.href).then(cached => {
