@@ -1,6 +1,6 @@
 // Amateur Extra Class Ham Radio Study PWA - Service Worker
 const CACHE_PREFIX = 'hamradio-extra-study-app';
-const CACHE_VERSION = '2026-04-04b';
+const CACHE_VERSION = '2026-04-04c';
 const CACHE_NAME = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const ASSETS = [
   './',
@@ -9,7 +9,17 @@ const ASSETS = [
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
-  '../../pools/2024-2028/questions.json'
+  '../../pools/2024-2028/questions.json',
+  '../../figures/E5-1-smith-chart-impedance.svg',
+  '../../figures/E6-1-transistor-symbols.svg',
+  '../../figures/E6-2-diode-symbols.svg',
+  '../../figures/E6-3-logic-gate-symbols.svg',
+  '../../figures/E7-1-amplifier-circuit.svg',
+  '../../figures/E7-2-voltage-regulator.svg',
+  '../../figures/E7-3-inverting-op-amp.svg',
+  '../../figures/E9-1-directional-pattern.svg',
+  '../../figures/E9-2-elevation-pattern.svg',
+  '../../figures/E9-3-smith-chart.svg'
 ];
 const APP_BASE_URL = new URL('./', self.location.href);
 const PRECACHE_URLS = ASSETS.map(path => new URL(path, APP_BASE_URL).href);
