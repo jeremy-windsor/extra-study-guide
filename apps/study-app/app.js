@@ -72,6 +72,19 @@ const BADGES = [
   { id: 'ready', icon: '📡', name: 'Exam Ready', desc: 'Reach 90% readiness' },
 ];
 
+const FIGURE_MAP = {
+  'e5-1': { src: '../../figures/E5-1-smith-chart-impedance.svg', label: 'Figure E5-1 — Smith Chart' },
+  'e6-1': { src: '../../figures/E6-1-transistor-symbols.svg', label: 'Figure E6-1 — Transistor Symbols' },
+  'e6-2': { src: '../../figures/E6-2-diode-symbols.svg', label: 'Figure E6-2 — Diode Symbols' },
+  'e6-3': { src: '../../figures/E6-3-logic-gate-symbols.svg', label: 'Figure E6-3 — Logic Gate Symbols' },
+  'e7-1': { src: '../../figures/E7-1-amplifier-circuit.svg', label: 'Figure E7-1 — Amplifier Circuit' },
+  'e7-2': { src: '../../figures/E7-2-voltage-regulator.svg', label: 'Figure E7-2 — Voltage Regulator' },
+  'e7-3': { src: '../../figures/E7-3-inverting-op-amp.svg', label: 'Figure E7-3 — Inverting Op-Amp' },
+  'e9-1': { src: '../../figures/E9-1-directional-pattern.svg', label: 'Figure E9-1 — Directional Pattern' },
+  'e9-2': { src: '../../figures/E9-2-elevation-pattern.svg', label: 'Figure E9-2 — Elevation Pattern' },
+  'e9-3': { src: '../../figures/E9-3-smith-chart.svg', label: 'Figure E9-3 — Smith Chart' },
+};
+
 const STATE_KEY = 'hamradio_extra_state_v1';
 const VALID_BADGE_IDS = new Set(BADGES.map(b => b.id));
 const VALID_POOL_IDS = new Set(POOLS.map(p => p.id));
@@ -257,6 +270,7 @@ function showPage(page, skipMenu) {
   if (page === 'progress') renderProgress();
   if (page === 'sections') renderSections();
   if (page === 'flashcard' && !skipMenu) showFlashcardMenu();
+  if (page === 'schematic' && !skipMenu) showSchematicMenu();
   if (page === 'test' && !skipMenu) showTestStart();
 
   updateFormulaFab();
@@ -500,6 +514,15 @@ function loadCard(idx) {
 
   document.getElementById('fc-qid').textContent = q.id;
   document.getElementById('fc-question').textContent = q.question;
+
+  // Remove old figure if any
+  const oldFcFig = document.getElementById('fc-figure-container');
+  if (oldFcFig) oldFcFig.remove();
+  // Show figure if question references one
+  const fcFigHtml = renderInlineFigure(q.question, 'fc-figure-container');
+  if (fcFigHtml) {
+    document.getElementById('fc-question').insertAdjacentHTML('afterend', fcFigHtml);
+  }
 
   // Show section label for weak areas mode
   if (fcSection === 'weak_areas') {
@@ -885,6 +908,21 @@ function renderTestQuestion() {
   document.getElementById('test-qnum').textContent = n;
   document.getElementById('test-qid').textContent = q.id;
   document.getElementById('test-question').textContent = q.question;
+  closeFigureZoom();
+
+  // Show figure image if question references one
+  const figureEl = document.getElementById('test-figure');
+  const figureImg = document.getElementById('test-figure-img');
+  const figInfo = getFigureForQuestion(q.question);
+  if (figInfo) {
+    figureImg.src = figInfo.src;
+    figureImg.dataset.figSrc = figInfo.src;
+    figureEl.style.display = 'block';
+  } else {
+    figureEl.style.display = 'none';
+    figureImg.src = '';
+  }
+
   const testPct = Math.round(n / EXAM_TOTAL * 100);
   document.getElementById('test-bar').style.width = testPct + '%';
   const testBarContainer = document.getElementById('test-bar-container');
@@ -1417,6 +1455,15 @@ function renderStudyQuestion() {
   document.getElementById('study-qid').textContent = q.id;
   document.getElementById('study-question').textContent = q.question;
 
+  // Remove old figure if any
+  const oldStudyFig = document.getElementById('study-figure-container');
+  if (oldStudyFig) oldStudyFig.remove();
+  // Show figure if question references one
+  const studyFigHtml = renderInlineFigure(q.question, 'study-figure-container');
+  if (studyFigHtml) {
+    document.getElementById('study-question').insertAdjacentHTML('afterend', studyFigHtml);
+  }
+
   const letters = ['A', 'B', 'C', 'D'];
   const previousAnswer = studyAnswers[studyIndex];
   const isReviewing = previousAnswer !== undefined;
@@ -1524,6 +1571,296 @@ function studyRestart() {
   renderStudyQuestion();
 }
 
+// ===== FIGURE SUPPORT =====
+
+function getFigureForQuestion(question) {
+  const text = question.toLowerCase();
+  const match = text.match(/figure (e[0-9]+-[0-9]+)/);
+  if (!match) return null;
+  const key = match[1];
+  return FIGURE_MAP[key] || null;
+}
+
+function renderInlineFigure(question, containerId) {
+  const fig = getFigureForQuestion(question);
+  if (!fig) return '';
+  return `<div class="fc-figure" id="${containerId}">
+    <img src="${fig.src}" alt="${escapeHtml(fig.label)}" class="fc-figure-img" data-action="zoom-figure" data-fig-src="${fig.src}">
+    <div style="font-size:12px;color:var(--text2);margin-top:6px;font-weight:500;">${escapeHtml(fig.label)}</div>
+  </div>`;
+}
+
+function zoomFigure(src) {
+  if (!src) return;
+  const overlay = document.getElementById('fig-zoom-overlay');
+  document.getElementById('fig-zoom-img').src = src;
+  overlay.classList.add('open');
+}
+
+function closeFigureZoom() {
+  const overlay = document.getElementById('fig-zoom-overlay');
+  overlay.classList.remove('open');
+  document.getElementById('fig-zoom-img').src = '';
+}
+
+// ===== SCHEMATIC DIAGRAMS =====
+
+let schDeck = [];
+let schIndex = 0;
+let schFigureFilter = 'all';
+let schFlipped = false;
+let schSessionCorrect = 0;
+let schSessionWrong = 0;
+let schAnswered = {}; // track answered cards to prevent re-scoring on prev
+let schAdvanceTimer = null;
+
+function clearSchAdvanceTimer() {
+  if (!schAdvanceTimer) return;
+  clearTimeout(schAdvanceTimer);
+  schAdvanceTimer = null;
+}
+
+function getSchematicQuestions(figureFilter) {
+  return QUESTION_POOL.filter(q => {
+    const text = q.question.toLowerCase();
+    const match = text.match(/figure (e[0-9]+-[0-9]+)/);
+    if (!match) return false;
+    if (figureFilter === 'all') return true;
+    return match[1] === figureFilter.toLowerCase();
+  });
+}
+
+function getSchFigureSrc(question) {
+  const fig = getFigureForQuestion(question);
+  return fig ? fig.src : null;
+}
+
+function getSchFigureLabel(question) {
+  const fig = getFigureForQuestion(question);
+  return fig ? fig.label : '';
+}
+
+function showSchematicMenu() {
+  clearSchAdvanceTimer();
+  schFigureFilter = 'all';
+  document.querySelectorAll('.sch-figure-tab').forEach(t => t.classList.remove('active'));
+  const allTab = document.querySelector('.sch-figure-tab[data-figure="all"]');
+  if (allTab) allTab.classList.add('active');
+  document.getElementById('sch-menu').style.display = 'block';
+  document.getElementById('sch-session').style.display = 'none';
+  document.getElementById('sch-done').style.display = 'none';
+
+  const allSchQs = getSchematicQuestions('all');
+  const mastered = allSchQs.filter(q => state.cards[q.id]?.mastered).length;
+  const totalCorrect = allSchQs.reduce((s, q) => s + (state.cards[q.id]?.correct || 0), 0);
+  const totalWrong = allSchQs.reduce((s, q) => s + (state.cards[q.id]?.wrong || 0), 0);
+  const accPct = (totalCorrect + totalWrong) > 0
+    ? Math.round(totalCorrect / (totalCorrect + totalWrong) * 100) : 0;
+
+  document.getElementById('sch-stat-total').textContent = allSchQs.length;
+  document.getElementById('sch-stat-mastered').textContent = mastered;
+  document.getElementById('sch-stat-pct').textContent = accPct + '%';
+}
+
+function selectSchFigure(el) {
+  if (!el) return;
+  const fig = el.dataset.figure;
+  document.querySelectorAll('.sch-figure-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  schFigureFilter = fig;
+}
+
+function buildSchDeck(figureFilter) {
+  let pool = getSchematicQuestions(figureFilter);
+
+  pool.sort((a, b) => {
+    const ca = state.cards[a.id];
+    const cb = state.cards[b.id];
+    const seenA = ca?.seen ? 1 : 0;
+    const seenB = cb?.seen ? 1 : 0;
+    if (seenA !== seenB) return seenA - seenB;
+    const errA = ca ? (ca.wrong || 0) / Math.max(1, (ca.correct || 0) + (ca.wrong || 0)) : 0;
+    const errB = cb ? (cb.wrong || 0) / Math.max(1, (cb.correct || 0) + (cb.wrong || 0)) : 0;
+    return errB - errA;
+  });
+
+  return pool;
+}
+
+function startSchematicFlashcards() {
+  clearSchAdvanceTimer();
+  schDeck = buildSchDeck(schFigureFilter);
+  if (schDeck.length === 0) return;
+  schIndex = 0;
+  schSessionCorrect = 0;
+  schSessionWrong = 0;
+  schFlipped = false;
+  schAnswered = {};
+
+  document.getElementById('sch-menu').style.display = 'none';
+  document.getElementById('sch-session').style.display = 'block';
+  document.getElementById('sch-done').style.display = 'none';
+
+  document.getElementById('sch-total').textContent = schDeck.length;
+  document.getElementById('sch-section-label').textContent =
+    schFigureFilter === 'all' ? 'All Diagrams' : 'Figure ' + schFigureFilter;
+
+  loadSchCard(0);
+  recordStudyDay();
+}
+
+function loadSchCard(idx) {
+  clearSchAdvanceTimer();
+  document.getElementById('sch-wrong-next').style.display = 'none';
+  if (idx >= schDeck.length) {
+    showSchDone();
+    return;
+  }
+  const q = schDeck[idx];
+  schFlipped = false;
+
+  const figSrc = getSchFigureSrc(q.question);
+  const figLabel = getSchFigureLabel(q.question);
+  const figImg = document.getElementById('sch-figure-img');
+  figImg.src = figSrc || '';
+  figImg.dataset.figSrc = figSrc || '';
+  figImg.style.display = figSrc ? 'block' : 'none';
+  document.getElementById('sch-figure-label').textContent = figLabel;
+
+  const letters = ['A', 'B', 'C', 'D'];
+  document.getElementById('sch-qid').textContent = q.id;
+  document.getElementById('sch-question').textContent = q.question;
+
+  document.getElementById('sch-options').innerHTML =
+    q.answers.map((a, i) =>
+      `<div class="fc-option" id="sch-opt-${i}" data-action="select-sch-answer" data-answer-index="${i}" data-keyboard-activate="true" role="button" tabindex="0">
+        <span class="fc-option-letter">${letters[i]}</span>
+        <span>${escapeHtml(a)}</span>
+      </div>`
+    ).join('');
+
+  document.getElementById('sch-current').textContent = idx + 1;
+  const pct = Math.round(idx / schDeck.length * 100);
+  document.getElementById('sch-bar').style.width = pct + '%';
+  const barContainer = document.getElementById('sch-bar-container');
+  if (barContainer) barContainer.setAttribute('aria-valuenow', pct);
+  document.getElementById('sch-back-btn').disabled = (idx === 0);
+
+  if (!state.cards[q.id]) state.cards[q.id] = {};
+  state.cards[q.id].seen = true;
+  saveState();
+}
+
+function showSchFeedback(selectedIndex) {
+  const q = schDeck[schIndex];
+  if (!q) return false;
+
+  q.answers.forEach((_, i) => {
+    const el = document.getElementById(`sch-opt-${i}`);
+    if (!el) return;
+    el.removeAttribute('data-action');
+    el.removeAttribute('data-answer-index');
+    el.removeAttribute('data-keyboard-activate');
+    el.setAttribute('aria-disabled', 'true');
+    el.tabIndex = -1;
+    if (i === q.correct) {
+      el.classList.add('fc-correct');
+    } else {
+      el.classList.add('fc-wrong');
+    }
+    if (selectedIndex !== q.correct && i === selectedIndex) {
+      el.classList.add('fc-selected-wrong');
+    }
+  });
+
+  return selectedIndex === q.correct;
+}
+
+function selectSchAnswer(selectedIndex) {
+  if (schFlipped) return;
+  schFlipped = true;
+  const alreadyAnswered = schAnswered[schIndex];
+  schAnswered[schIndex] = true;
+
+  const pickedCorrectly = showSchFeedback(selectedIndex);
+  checkBadge('first_flip');
+
+  if (alreadyAnswered) return; // prevent re-scoring on prev navigation
+
+  if (pickedCorrectly) {
+    announce('Correct! Moving to next question.');
+    schAdvanceTimer = setTimeout(() => {
+      schAdvanceTimer = null;
+      markSchCard(true);
+    }, 1200);
+    return;
+  }
+
+  announce('Incorrect. The correct answer is highlighted. Press Next to continue.');
+  markSchCard(false, { advance: false });
+  document.getElementById('sch-wrong-next').style.display = 'flex';
+}
+
+function markSchCard(correct, { advance = true } = {}) {
+  const q = schDeck[schIndex];
+  if (!state.cards[q.id]) state.cards[q.id] = {};
+  const c = state.cards[q.id];
+
+  if (correct) {
+    c.correct = (c.correct || 0) + 1;
+    c.weakStreak = (c.weakStreak || 0) + 1;
+    schSessionCorrect++;
+    const total = (c.correct || 0) + (c.wrong || 0);
+    if (c.correct >= 3 && (c.wrong || 0) / total < 0.2) c.mastered = true;
+    if ((c.weakStreak || 0) >= 3) c.mastered = true;
+  } else {
+    c.wrong = (c.wrong || 0) + 1;
+    c.mastered = false;
+    c.weakStreak = 0;
+    schSessionWrong++;
+  }
+  saveState();
+  checkBadges();
+
+  if (!advance) return;
+  schIndex++;
+  loadSchCard(schIndex);
+}
+
+function schPrevCard() {
+  clearSchAdvanceTimer();
+  if (schIndex <= 0) return;
+  schIndex--;
+  loadSchCard(schIndex);
+}
+
+function schAdvanceNext() {
+  document.getElementById('sch-wrong-next').style.display = 'none';
+  schIndex++;
+  loadSchCard(schIndex);
+}
+
+function showSchDone() {
+  document.getElementById('sch-session').style.display = 'none';
+  document.getElementById('sch-done').style.display = 'flex';
+  document.getElementById('sch-done').style.flexDirection = 'column';
+  document.getElementById('sch-done').style.gap = '12px';
+
+  const total = schSessionCorrect + schSessionWrong;
+  const pct = total > 0 ? Math.round(schSessionCorrect / total * 100) : 0;
+  document.getElementById('sch-done-stats').innerHTML =
+    `<strong>${schSessionCorrect}</strong> correct, <strong>${schSessionWrong}</strong> learning, ${pct}% accuracy`;
+
+  const mastered = Object.values(state.cards).filter(c => c.mastered).length;
+  if (mastered >= 50) checkBadge('mastered_50');
+  if (mastered >= QUESTION_POOL.length) checkBadge('mastered_all');
+}
+
+function endSchematicFlashcards() {
+  clearSchAdvanceTimer();
+  showSchematicMenu();
+}
+
 // ===== ACTION HANDLER =====
 
 function handleAction(actionEl) {
@@ -1563,6 +1900,16 @@ function handleAction(actionEl) {
     case 'reload-page': window.location.reload(); return;
     case 'start-weak-areas': startWeakAreas(); return;
     case 'open-formula-modal': openModal('formula-modal'); return;
+    case 'select-sch-figure': selectSchFigure(actionEl); return;
+    case 'start-schematic-flashcards': startSchematicFlashcards(); return;
+    case 'sch-prev-card': schPrevCard(); return;
+    case 'end-schematic-flashcards': endSchematicFlashcards(); return;
+    case 'sch-advance-next': schAdvanceNext(); return;
+    case 'restart-schematic-flashcards': startSchematicFlashcards(); return;
+    case 'show-schematic-menu': showSchematicMenu(); return;
+    case 'select-sch-answer': selectSchAnswer(Number(actionEl.dataset.answerIndex)); return;
+    case 'zoom-figure': zoomFigure(actionEl.dataset.figSrc || actionEl.src); return;
+    case 'close-fig-zoom': closeFigureZoom(); return;
     default: return;
   }
 }
@@ -1580,6 +1927,11 @@ function handleDocumentChange(event) {
 
 function handleDocumentKeydown(event) {
   if (event.key === 'Escape') {
+    const figOverlay = document.getElementById('fig-zoom-overlay');
+    if (figOverlay?.classList.contains('open')) {
+      closeFigureZoom();
+      return;
+    }
     const formulaModal = document.getElementById('formula-modal');
     if (formulaModal?.classList.contains('open')) {
       closeModal('formula-modal');
