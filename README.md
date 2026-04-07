@@ -18,7 +18,7 @@ Pass the FCC Amateur Extra class license exam — the top-tier amateur radio lic
 | **Questions** | 50 multiple choice |
 | **Passing** | 37 correct (74%) |
 | **Time** | No official time limit |
-| **Fee** | $35 (ARRL VEC) |
+| **Fee** | ~$15 VEC session fee + $35 FCC application fee |
 | **Prerequisite** | General class license |
 | **Where** | Find a session at [arrl.org/find-an-amateur-radio-license-exam-session](http://www.arrl.org/find-an-amateur-radio-license-exam-session) |
 
@@ -32,6 +32,10 @@ The Amateur Extra license is the highest class of amateur radio license issued b
 - **Exclusive access** to portions of 80m, 40m, 20m, and 15m bands
 - **Authority** to be a Volunteer Examiner for all license classes
 - **International recognition** as a fully licensed amateur operator
+
+## Coming from General?
+
+Read [GENERAL-BRIDGE.md](GENERAL-BRIDGE.md) — a quick refresher on General-class concepts the Extra exam builds on, with self-test questions to check your readiness. Also available as [audio](GENERAL-BRIDGE.mp3) (5 min).
 
 ## Study App (PWA)
 
@@ -47,6 +51,7 @@ The fastest way to study — a browser-based app that works on your phone, table
 | **Weak areas** | Automatically focuses on questions you've missed |
 | **Progress tracking** | Mastery tracking, streaks, and achievements |
 | **Formula reference** | Expanded formulas for Extra-level math (Smith chart, complex impedance, filters, toroids) |
+| **Schematic diagrams** | 10 reference figures (Smith chart, transistor/diode symbols, op-amps, antenna patterns) |
 | **Offline capable** | Works without internet after first load |
 | **Installable** | Add to Home Screen on mobile, or install from Chrome/Edge on desktop |
 
@@ -84,6 +89,8 @@ Each subelement has three files:
 - **`E{N}-{name}.mp3`** — Audio version of the study guide (listen while driving, working out, etc.)
 - **`E{N}-{name}-questions.md`** — Exam question bank: every question with the correct answer highlighted and explained
 
+Reference figures for Smith charts, circuit symbols, and antenna patterns are in [figures/](figures/).
+
 Start with the study guide to learn the material, then drill the question bank to lock in the answers.
 
 | Section | Topic | Study Guide | Question Bank | Exam Qs | Pool Size |
@@ -117,25 +124,25 @@ Every section and the cram sheet are available as MP3 audio — study while driv
 | `subelements/E1-commission-rules.mp3` | 28 min |
 | `subelements/E1-commission-rules-questions.mp3` | 41 min |
 | `subelements/E2-operating-procedures.mp3` | 25 min |
-| `subelements/E2-operating-procedures-questions.mp3` | 27 min |
+| `subelements/E2-operating-procedures-questions.mp3` | 28 min |
 | `subelements/E3-radio-wave-propagation.mp3` | 19 min |
 | `subelements/E3-radio-wave-propagation-questions.mp3` | 18 min |
-| `subelements/E4-amateur-practices.mp3` | 32 min |
-| `subelements/E4-amateur-practices-questions.mp3` | 35 min |
+| `subelements/E4-amateur-practices.mp3` | 33 min |
+| `subelements/E4-amateur-practices-questions.mp3` | 36 min |
 | `subelements/E5-electrical-principles.mp3` | 21 min |
 | `subelements/E5-electrical-principles-questions.mp3` | 54 min |
-| `subelements/E6-circuit-components.mp3` | 30 min |
+| `subelements/E6-circuit-components.mp3` | 31 min |
 | `subelements/E6-circuit-components-questions.mp3` | 42 min |
-| `subelements/E7-practical-circuits.mp3` | 51 min |
-| `subelements/E7-practical-circuits-questions.mp3` | 75 min |
-| `subelements/E8-signals-emissions.mp3` | 30 min |
-| `subelements/E8-signals-emissions-questions.mp3` | 32 min |
+| `subelements/E7-practical-circuits.mp3` | 52 min |
+| `subelements/E7-practical-circuits-questions.mp3` | 76 min |
+| `subelements/E8-signals-emissions.mp3` | 31 min |
+| `subelements/E8-signals-emissions-questions.mp3` | 33 min |
 | `subelements/E9-antennas-transmission-lines.mp3` | 48 min |
 | `subelements/E9-antennas-transmission-lines-questions.mp3` | 71 min |
-| `subelements/E0-safety.mp3` | 10 min |
-| `subelements/E0-safety-questions.mp3` | 6 min |
+| `subelements/E0-safety.mp3` | 11 min |
+| `subelements/E0-safety-questions.mp3` | 7 min |
 | `CRAM-SHEET.mp3` | 32 min |
-| **Total** | **12h 7m** |
+| **Total** | **12h 17m** |
 
 Each MP3 is the audio version of the corresponding study guide narrative or question bank. Pronunciation of ham radio acronyms follows standard conventions (see `tts/pronunciation.txt`).
 
