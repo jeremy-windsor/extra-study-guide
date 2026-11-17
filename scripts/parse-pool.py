@@ -37,18 +37,24 @@ SEPARATOR = re.compile(r'^~~\s*$')
 
 def parse_pool(text: str) -> list[dict]:
     """Parse the raw pool text into a list of question dicts."""
+    # The PDF text export turns a hyphen at a line wrap into a \x02 control
+    # character (e.g. "A\x02index"), so put the hyphen back.
+    text = text.replace('\x02', '-')
     lines = text.split('\n')
     questions = []
 
     # Find where actual questions start (first line matching Q_HEADER)
     start_idx = 0
+    # Start at E1A01: the errata notes at the top of the document also
+    # contain lines that look like question headers (e.g. E1E10).
     for i, line in enumerate(lines):
-        if Q_HEADER.match(line.strip()):
+        if line.strip().startswith('E1A01 '):
             start_idx = i
             break
 
     current_q = None
     question_lines = []
+    last_letter = None
 
     for line in lines[start_idx:]:
         stripped = line.strip()
@@ -101,6 +107,13 @@ def parse_pool(text: str) -> list[dict]:
             letter = am.group(1)
             answer_text = am.group(2).strip()
             current_q['answers'][letter] = answer_text
+            last_letter = letter
+            continue
+
+        # A non-blank line after an answer is that answer wrapped onto the
+        # next line in the NCVEC document, so join it to the answer.
+        if stripped and current_q['answers']:
+            current_q['answers'][last_letter] += ' ' + stripped
             continue
 
         # Otherwise it's part of the question text

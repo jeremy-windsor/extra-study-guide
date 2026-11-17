@@ -25,10 +25,10 @@
 **Why does a PN-junction diode not conduct current when reverse biased?**
 - A) Only P-type semiconductor material can conduct current
 - B) Only N-type semiconductor material can conduct current
-- **C) Holes in P-type material and electrons in the N-type material are separated by the applied voltage,** ✅
-- D) Excess holes in P-type material combine with the electrons in N-type material, converting the entire
+- **C) Holes in P-type material and electrons in the N-type material are separated by the applied voltage, widening the depletion region** ✅
+- D) Excess holes in P-type material combine with the electrons in N-type material, converting the entire diode into an insulator
 
-> The correct answer is Holes in P-type material and electrons in the N-type material are separated by the applied voltage,.
+> The correct answer is Holes in P-type material and electrons in the N-type material are separated by the applied voltage, widening the depletion region.
 
 ### E6A04
 **What is the name given to an impurity atom that adds holes to a semiconductor crystal structure?**
@@ -271,9 +271,9 @@
 ### E6C07
 **What best describes a pull-up or pull-down resistor?**
 - A) A resistor in a keying circuit used to reduce key clicks
-- **B) A resistor connected to the positive or negative supply used to establish a voltage when an input or** ✅
+- **B) A resistor connected to the positive or negative supply used to establish a voltage when an input or output is an open circuit** ✅
 - C) A resistor that ensures that an oscillator frequency does not drift
-- D) A resistor connected to an op-amp output that prevents signals from exceeding the power supply
+- D) A resistor connected to an op-amp output that prevents signals from exceeding the power supply voltage
 
 > A pull-up or pull-down resistor is connected to the positive supply (pull-up) or negative supply/ground (pull-down) to establish a defined voltage level when an input or output is otherwise floating (not actively driven). Without these resistors, unconnected CMOS inputs can float to indeterminate levels, causing unpredictable behavior and excessive current draw.
 
@@ -317,19 +317,19 @@
 
 ### E6D01
 **What is piezoelectricity?**
-- A) The ability of materials to generate electromagnetic waves of a certain frequency when voltage is
-- B) A characteristic of materials that have an index of refraction which depends on the polarization of the
-- **C) A characteristic of materials that generate a voltage when stressed and that flex when a voltage is** ✅
-- D) The ability of materials to generate voltage when an electromagnetic wave of a certain frequency is
+- A) The ability of materials to generate electromagnetic waves of a certain frequency when voltage is applied
+- B) A characteristic of materials that have an index of refraction which depends on the polarization of the electromagnetic wave passing through it
+- **C) A characteristic of materials that generate a voltage when stressed and that flex when a voltage is applied** ✅
+- D) The ability of materials to generate voltage when an electromagnetic wave of a certain frequency is applied
 
 > Piezoelectricity is the property of certain materials (notably quartz) that generate a voltage when mechanically stressed AND flex/deform when a voltage is applied. This bidirectional effect is the basis of crystal oscillators (electrical ↔ mechanical energy conversion), piezoelectric buzzers, crystal microphones, and ultrasonic transducers.
 
 ### E6D02
 **What is the equivalent circuit of a quartz crystal?**
 - **A) Series RLC in parallel with a shunt C representing electrode and stray capacitance** ✅
-- B) Parallel RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode
-- C) Series RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode
-- D) Parallel RLC, where C is the series combination of resonance capacitance of the crystal and electrode
+- B) Parallel RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode and stray capacitance
+- C) Series RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode and stray capacitance
+- D) Parallel RLC, where C is the series combination of resonance capacitance of the crystal and electrode and stray capacitance
 
 > The equivalent circuit of a quartz crystal is a series RLC circuit (representing the mechanical resonance: R=losses, L=mass, C=compliance) in parallel with a shunt capacitance representing the electrode and stray capacitance (C_0). This creates two resonant frequencies: series resonance (lower, where series RLC is minimum impedance) and parallel resonance (slightly higher, where the combination is maximum impedance).
 
@@ -466,7 +466,7 @@
 - A) The ability to retrieve information from a single signal, even in the presence of other strong signals
 - B) Extremely high Q factor and high stability over a wide temperature range
 - C) Nearly infinite gain, very high input impedance, and very low output impedance
-- **D) Controlled gain, low noise figure, and constant input and output impedance over the specified** ✅
+- **D) Controlled gain, low noise figure, and constant input and output impedance over the specified frequency range** ✅
 
 > MMICs are popular for VHF through microwave circuits because they offer controlled gain, low noise figure, and constant input and output impedance over their specified frequency range. These characteristics make them easy to use as building blocks — just connect them in series with appropriate bias and decoupling. The consistent 50-ohm impedance simplifies system design.
 

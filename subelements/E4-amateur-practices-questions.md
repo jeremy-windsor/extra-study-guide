@@ -32,12 +32,12 @@
 
 ### E4A04
 **How is compensation of an oscilloscope probe performed?**
-- **A) A square wave is displayed, and the probe is adjusted until the horizontal portions of the displayed** ✅
+- **A) A square wave is displayed, and the probe is adjusted until the horizontal portions of the displayed wave are as nearly flat as possible** ✅
 - B) A high frequency sine wave is displayed, and the probe is adjusted for maximum amplitude
 - C) A frequency standard is displayed, and the probe is adjusted until the deflection time is accurate
 - D) A DC voltage standard is displayed, and the probe is adjusted until the displayed voltage is accurate
 
-> The correct answer is A square wave is displayed, and the probe is adjusted until the horizontal portions of the displayed.
+> The correct answer is A square wave is displayed, and the probe is adjusted until the horizontal portions of the displayed wave are as nearly flat as possible.
 
 ### E4A05
 **What is the purpose of using a prescaler with a frequency counter?**
@@ -115,12 +115,12 @@
 
 ### E4B02
 **What is the significance of voltmeter sensitivity expressed in ohms per volt?**
-- **A) The full scale reading of the voltmeter multiplied by its ohms per volt rating is the input impedance of** ✅
-- B) The reading in volts multiplied by the ohms per volt rating will determine the power drawn by the
-- C) The reading in ohms divided by the ohms per volt rating will determine the voltage applied to the
+- **A) The full scale reading of the voltmeter multiplied by its ohms per volt rating is the input impedance of the voltmeter** ✅
+- B) The reading in volts multiplied by the ohms per volt rating will determine the power drawn by the device under test
+- C) The reading in ohms divided by the ohms per volt rating will determine the voltage applied to the circuit
 - D) The full scale reading in amps divided by ohms per volt rating will determine the size of shunt needed
 
-> The correct answer is The full scale reading of the voltmeter multiplied by its ohms per volt rating is the input impedance of.
+> The correct answer is The full scale reading of the voltmeter multiplied by its ohms per volt rating is the input impedance of the voltmeter.
 
 ### E4B03
 **Which S parameter is equivalent to forward gain?**
@@ -187,12 +187,12 @@
 
 ### E4B10
 **Which of the following methods measures intermodulation distortion in an SSB transmitter?**
-- A) Modulate the transmitter using two RF signals having non-harmonically related frequencies and
-- **B) Modulate the transmitter using two AF signals having non-harmonically related frequencies and** ✅
-- C) Modulate the transmitter using two AF signals having harmonically related frequencies and observe
-- D) Modulate the transmitter using two RF signals having harmonically related frequencies and observe
+- A) Modulate the transmitter using two RF signals having non-harmonically related frequencies and observe the RF output with a spectrum analyzer
+- **B) Modulate the transmitter using two AF signals having non-harmonically related frequencies and observe the RF output with a spectrum analyzer** ✅
+- C) Modulate the transmitter using two AF signals having harmonically related frequencies and observe the RF output with a peak reading wattmeter
+- D) Modulate the transmitter using two RF signals having harmonically related frequencies and observe the RF output with a logic analyzer
 
-> The correct choice here is Modulate the transmitter using two AF signals having non-harmonically related frequencies and.
+> The correct choice here is Modulate the transmitter using two AF signals having non-harmonically related frequencies and observe the RF output with a spectrum analyzer.
 
 ### E4B11
 **Which of the following can be measured with a vector network analyzer?**
@@ -215,7 +215,7 @@
 > The correct answer is It can combine with strong signals on nearby frequencies to generate interference.
 
 ### E4C02
-**Which of the following receiver circuits can be effective in eliminating interference from strong out-of- band signals?**
+**Which of the following receiver circuits can be effective in eliminating interference from strong out-of-band signals?**
 - **A) A front-end filter or preselector** ✅
 - B) A narrow IF filter
 - C) A notch filter
@@ -288,12 +288,12 @@
 
 ### E4C10
 **What is an advantage of having a variety of receiver bandwidths from which to select?**
-- A) The noise figure of the RF amplifier can be adjusted to match the modulation type, thus increasing
+- A) The noise figure of the RF amplifier can be adjusted to match the modulation type, thus increasing receiver sensitivity
 - B) Receiver power consumption can be reduced when wider bandwidth is not required
-- **C) Receive bandwidth can be set to match the modulation bandwidth, maximizing signal-to-noise ratio** ✅
+- **C) Receive bandwidth can be set to match the modulation bandwidth, maximizing signal-to-noise ratio and minimizing interference** ✅
 - D) Multiple frequencies can be received simultaneously if desired
 
-> The correct answer is Receive bandwidth can be set to match the modulation bandwidth, maximizing signal-to-noise ratio.
+> The correct answer is Receive bandwidth can be set to match the modulation bandwidth, maximizing signal-to-noise ratio and minimizing interference.
 
 ### E4C11
 **Why does input attenuation reduce receiver overload on the lower frequency HF bands with little or no impact on signal-to-noise ratio?**
@@ -318,7 +318,7 @@
 - A) Two out-of-band signals mixing to generate an in-band spurious signal
 - B) In-phase signals cancelling in a mixer resulting in loss of receiver sensitivity
 - C) Two digital signals combining from alternate time slots
-- **D) Local oscillator phase noise mixing with adjacent strong signals to create interference to desired** ✅
+- **D) Local oscillator phase noise mixing with adjacent strong signals to create interference to desired signals** ✅
 
 > Reciprocal mixing happens when local-oscillator phase noise combines with a strong nearby signal and produces interference in the desired receive channel. It is a receiver noise-floor problem, not ordinary two-signal intermodulation inside the front end.
 
@@ -335,12 +335,12 @@
 
 ### E4D01
 **What is meant by the blocking dynamic range of a receiver?**
-- **A) The difference in dB between the noise floor and the level of an incoming signal that will cause 1 dB** ✅
-- B) The minimum difference in dB between the levels of two FM signals that will cause one signal to block
+- **A) The difference in dB between the noise floor and the level of an incoming signal that will cause 1 dB of gain compression** ✅
+- B) The minimum difference in dB between the levels of two FM signals that will cause one signal to block the other
 - C) The difference in dB between the noise floor and the third-order intercept point
-- D) The minimum difference in dB between two signals which produce third-order intermodulation
+- D) The minimum difference in dB between two signals which produce third-order intermodulation products greater than the noise floor
 
-> The correct answer is The difference in dB between the noise floor and the level of an incoming signal that will cause 1 dB.
+> The correct answer is The difference in dB between the noise floor and the level of an incoming signal that will cause 1 dB of gain compression.
 
 ### E4D02
 **Which of the following describes problems caused by poor dynamic range in a receiver?**
@@ -408,11 +408,11 @@
 ### E4D10
 **What does a third-order intercept level of 40 dBm mean with respect to receiver performance?**
 - A) Signals less than 40 dBm will not generate audible third-order intermodulation products
-- B) The receiver can tolerate signals up to 40 dB above the noise floor without producing third-order
-- **C) A pair of 40 dBm input signals will theoretically generate a third-order intermodulation product that** ✅
-- D) A pair of 1 mW input signals will produce a third-order intermodulation product that is 40 dB stronger
+- B) The receiver can tolerate signals up to 40 dB above the noise floor without producing third-order intermodulation products
+- **C) A pair of 40 dBm input signals will theoretically generate a third-order intermodulation product that has the same output amplitude as either of the input signals** ✅
+- D) A pair of 1 mW input signals will produce a third-order intermodulation product that is 40 dB stronger than the input signal
 
-> A pair of 40 dBm input signals will theoretically generate a third-order intermodulation product that is the correct term or definition for this question.
+> The third-order intercept (IP3) is a theoretical point. Third-order products rise 3 dB for every 1 dB increase in input, so if you extend both lines on a graph they meet. An IP3 of 40 dBm means that two 40 dBm input signals would, in theory, produce a third-order product as strong as either input signal. A higher IP3 means a receiver handles strong signals better.
 
 ### E4D11
 **Why are odd-order intermodulation products, created within a receiver, of particular interest compared to other products?**
@@ -483,7 +483,7 @@
 **How can conducted noise from an automobile battery charging system be suppressed?**
 - A) By installing filter capacitors in series with the alternator leads
 - B) By installing a noise suppression resistor and a blocking capacitor at the battery
-- C) By installing a high-pass filter in series with the radio’s power lead and a low-pass filter in parallel with
+- C) By installing a high-pass filter in series with the radio’s power lead and a low-pass filter in parallel with the antenna feed line
 - **D) By installing ferrite chokes on the charging system leads** ✅
 
 > The correct answer is By installing ferrite chokes on the charging system leads.

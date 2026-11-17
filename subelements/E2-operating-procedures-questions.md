@@ -153,17 +153,17 @@
 **Which of the following describes the use of vestigial sideband in analog fast-scan TV transmissions?**
 - A) The vestigial sideband carries the audio information
 - B) The vestigial sideband contains chroma information
-- **C) Vestigial sideband reduces the bandwidth while increasing the fidelity of low frequency video** ✅
+- **C) Vestigial sideband reduces the bandwidth while increasing the fidelity of low frequency video components** ✅
 - D) Vestigial sideband provides high frequency emphasis to sharpen the picture
 
-> The correct choice here is Vestigial sideband reduces the bandwidth while increasing the fidelity of low frequency video.
+> The correct choice here is Vestigial sideband reduces the bandwidth while increasing the fidelity of low frequency video components.
 
 ### E2B06
 **What is vestigial sideband modulation?**
 - **A) Amplitude modulation in which one complete sideband and a portion of the other are transmitted** ✅
 - B) A type of modulation in which one sideband is inverted
-- C) Narrow-band FM modulation achieved by filtering one sideband from the audio before frequency
-- D) Spread spectrum modulation achieved by applying FM modulation following single sideband
+- C) Narrow-band FM modulation achieved by filtering one sideband from the audio before frequency modulating the carrier
+- D) Spread spectrum modulation achieved by applying FM modulation following single sideband amplitude modulation
 
 > The correct answer is Amplitude modulation in which one complete sideband and a portion of the other are transmitted.
 
@@ -306,7 +306,7 @@
 
 ### E2C10
 **Why do DX stations often transmit and receive on different frequencies?**
-- A) Because the DX station may be transmitting on a frequency that is prohibited to some responding
+- A) Because the DX station may be transmitting on a frequency that is prohibited to some responding stations
 - B) To separate the calling stations from the DX station
 - C) To improve operating efficiency by reducing interference
 - **D) All these choices are correct** ✅
@@ -535,12 +535,12 @@
 
 ### E2E12
 **How do ALE stations establish contact?**
-- **A) ALE constantly scans a list of frequencies, activating the radio when the designated call sign is** ✅
+- **A) ALE constantly scans a list of frequencies, activating the radio when the designated call sign is received** ✅
 - B) ALE radios monitor an internet site for the frequency they are being paged on
 - C) ALE radios send a constant tone code to establish a frequency for future use
 - D) ALE radios activate when they hear their signal echoed by back scatter
 
-> The correct answer is ALE constantly scans a list of frequencies, activating the radio when the designated call sign is.
+> The correct answer is ALE constantly scans a list of frequencies, activating the radio when the designated call sign is received.
 
 ### E2E13
 **Which of these digital modes has the highest data throughput under clear communication conditions?**

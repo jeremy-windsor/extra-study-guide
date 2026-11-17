@@ -118,7 +118,7 @@
         "A": "Only a person with an FCC Marine Radio license grant",
         "B": "Only a person named in an amateur station license grant",
         "C": "Any person holding an FCC issued amateur license or who is authorized for alien reciprocal operation",
-        "D": "Any person named in an amateur station license grant or a person holding an unrestricted"
+        "D": "Any person named in an amateur station license grant or a person holding an unrestricted Radiotelephone Operator Permit"
       }
     },
     {
@@ -157,7 +157,7 @@
         "A": "The control operator of the packet bulletin board station",
         "B": "The control operator of the originating station",
         "C": "The control operators of all the stations in the system",
-        "D": "The control operators of all the stations in the system not authenticating the source from which they"
+        "D": "The control operators of all the stations in the system not authenticating the source from which they accept communications"
       }
     },
     {
@@ -181,8 +181,8 @@
       "correct": "A",
       "answers": {
         "A": "Its operation must be approved by the master of the ship or the pilot in command of the aircraft",
-        "B": "The amateur station operator must agree not to transmit when the main radio of the ship or aircraft",
-        "C": "The amateur station must have a power supply that is completely independent of the main ship or",
+        "B": "The amateur station operator must agree not to transmit when the main radio of the ship or aircraft is in use",
+        "C": "The amateur station must have a power supply that is completely independent of the main ship or aircraft power supply",
         "D": "The amateur station must operate only in specific segments of the amateur service HF and VHF bands"
       }
     },
@@ -208,8 +208,8 @@
       "answers": {
         "A": "An amateur station transmission made without the proper call sign identification",
         "B": "A signal transmitted to prevent its detection by any station other than the intended recipient",
-        "C": "Any transmitted signal that unintentionally interferes with another licensed radio station and whose",
-        "D": "An emission outside the signal’s necessary bandwidth that can be reduced or eliminated without"
+        "C": "Any transmitted signal that unintentionally interferes with another licensed radio station and whose levels exceed 40 dB below the fundamental power level",
+        "D": "An emission outside the signal’s necessary bandwidth that can be reduced or eliminated without affecting the information transmitted"
       }
     },
     {
@@ -246,7 +246,7 @@
       "correct": "C",
       "answers": {
         "A": "Reduce the repeater antenna HAAT (Height Above Average Terrain)",
-        "B": "File an FAA NOTAM (Notice to Air Missions) with the repeater system's ERP, call sign, and six-",
+        "B": "File an FAA NOTAM (Notice to Air Missions) with the repeater system's ERP, call sign, and six-character grid locator",
         "C": "Cease operation or make changes to the repeater that mitigate the interference",
         "D": "All these choices are correct"
       }
@@ -271,10 +271,10 @@
       "question": "[97.15] Which of the following additional rules apply if you are erecting an amateur station antenna structure at a site at or near a public use airport?",
       "correct": "A",
       "answers": {
-        "A": "You may have to notify the Federal Aviation Administration and register it with the FCC as required by",
-        "B": "You may have to enter the height above ground in meters, and the latitude and longitude in degrees,",
+        "A": "You may have to notify the Federal Aviation Administration and register it with the FCC as required by Part 17 of the FCC rules",
+        "B": "You may have to enter the height above ground in meters, and the latitude and longitude in degrees, minutes, and seconds on the FAA website",
         "C": "You must file an Environmental Impact Statement with the EPA before construction begins",
-        "D": "You must obtain a construction permit from the airport zoning authority per Part 119 of the FAA"
+        "D": "You must obtain a construction permit from the airport zoning authority per Part 119 of the FAA regulations"
       }
     },
     {
@@ -300,7 +300,7 @@
         "A": "The amateur station must cease operation",
         "B": "The amateur station must cease operation on all frequencies below 30 MHz",
         "C": "The amateur station must cease operation on all frequencies above 30 MHz",
-        "D": "The amateur station must avoid transmitting during certain hours on frequencies that cause the"
+        "D": "The amateur station must avoid transmitting during certain hours on frequencies that cause the interference"
       }
     },
     {
@@ -312,7 +312,7 @@
       "answers": {
         "A": "Only those club stations licensed to Amateur Extra class operators",
         "B": "Any FCC-licensed amateur station except a Technician class",
-        "C": "Any FCC-licensed amateur station certified by the responsible civil defense organization for the area",
+        "C": "Any FCC-licensed amateur station certified by the responsible civil defense organization for the area served",
         "D": "Only stations meeting the FCC Part 97 technical standards for operation during an emergency"
       }
     },
@@ -362,9 +362,9 @@
       "question": "[97.117] Which of the following apply to communications transmitted to amateur stations in foreign countries?",
       "correct": "C",
       "answers": {
-        "A": "Third party traffic must be limited to that intended for the exclusive use of government and non-",
+        "A": "Third party traffic must be limited to that intended for the exclusive use of government and non-Government Organization (NGOs) involved in emergency relief activities",
         "B": "All transmissions must be in English",
-        "C": "Communications must be limited to those incidental to the purpose of the amateur service and",
+        "C": "Communications must be limited to those incidental to the purpose of the amateur service and remarks of a personal nature",
         "D": "All these choices are correct"
       }
     },
@@ -376,9 +376,9 @@
       "correct": "B",
       "answers": {
         "A": "Operators must not operate until approval is received",
-        "B": "Operators may operate after 30 days, providing they have not been told that their station is within 1",
-        "C": "Operators may not operate until a test signal has been transmitted in coordination with the local",
-        "D": "Operations may commence immediately, and may continue unless interference is reported by the"
+        "B": "Operators may operate after 30 days, providing they have not been told that their station is within 1 kilometer of PLC systems using those frequencies",
+        "C": "Operators may not operate until a test signal has been transmitted in coordination with the local power company",
+        "D": "Operations may commence immediately, and may continue unless interference is reported by the UTC"
       }
     },
     {
@@ -429,8 +429,8 @@
       "answers": {
         "A": "A special endorsement must be requested from the FCC",
         "B": "An environmental impact statement must be filed with the Department of the Interior",
-        "C": "Operators must inform the FAA of their intent to operate, giving their call sign and distance to the",
-        "D": "Operators must inform the Utilities Technology Council (UTC) of their call sign and coordinates of the"
+        "C": "Operators must inform the FAA of their intent to operate, giving their call sign and distance to the nearest runway",
+        "D": "Operators must inform the Utilities Technology Council (UTC) of their call sign and coordinates of the station"
       }
     },
     {
@@ -531,10 +531,10 @@
       "question": "[97.3(a)(45)] What is a space telecommand station?",
       "correct": "B",
       "answers": {
-        "A": "An amateur station located on the surface of the Earth for communication with other Earth stations",
-        "B": "An amateur station that transmits communications to initiate, modify, or terminate functions of a",
-        "C": "An amateur station located in a satellite or a balloon more than 50 kilometers above the surface of",
-        "D": "An amateur station that receives telemetry from a satellite or balloon more than 50 kilometers above"
+        "A": "An amateur station located on the surface of the Earth for communication with other Earth stations by means of Earth satellites",
+        "B": "An amateur station that transmits communications to initiate, modify, or terminate functions of a space station",
+        "C": "An amateur station located in a satellite or a balloon more than 50 kilometers above the surface of the Earth",
+        "D": "An amateur station that receives telemetry from a satellite or balloon more than 50 kilometers above the surface of the Earth"
       }
     },
     {
@@ -638,7 +638,7 @@
         "A": "Any amateur licensee who has successfully completed the AMSAT space communications course",
         "B": "Only those of General, Advanced or Amateur Extra class operators",
         "C": "Only those of Amateur Extra class operators",
-        "D": "Any amateur station, subject to the privileges of the class of operator license held by the control"
+        "D": "Any amateur station, subject to the privileges of the class of operator license held by the control operator"
       }
     },
     {
@@ -661,7 +661,7 @@
       "question": "[97.527] For which types of out-of-pocket expenses do the Part 97 rules state that VEs and VECs may be reimbursed?",
       "correct": "A",
       "answers": {
-        "A": "Preparing, processing, administering, and coordinating an examination for an amateur radio operator",
+        "A": "Preparing, processing, administering, and coordinating an examination for an amateur radio operator license",
         "B": "Teaching an amateur operator license examination preparation course",
         "C": "No expenses are authorized for reimbursement",
         "D": "Providing amateur operator license examination preparation training materials"
@@ -689,7 +689,7 @@
       "answers": {
         "A": "A person who has volunteered to administer amateur operator license examinations",
         "B": "An organization paid by the volunteer examiner team to publicize and schedule examinations",
-        "C": "An organization that has entered into an agreement with the FCC to coordinate, prepare, and",
+        "C": "An organization that has entered into an agreement with the FCC to coordinate, prepare, and administer amateur operator license examinations",
         "D": "The person who has entered into an agreement with the FCC to be the VE session manager"
       }
     },
@@ -700,8 +700,8 @@
       "question": "[97.509, 97.525] What is required to be accredited as a Volunteer Examiner?",
       "correct": "D",
       "answers": {
-        "A": "Each General, Advanced and Amateur Extra class operator is automatically accredited as a VE when",
-        "B": "The amateur operator applying must pass a VE examination administered by the FCC Enforcement",
+        "A": "Each General, Advanced and Amateur Extra class operator is automatically accredited as a VE when the license is granted",
+        "B": "The amateur operator applying must pass a VE examination administered by the FCC Enforcement Bureau",
         "C": "The prospective VE must obtain accreditation from the FCC",
         "D": "A VEC must confirm that the VE applicant meets FCC requirements to serve as an examiner"
       }
@@ -765,7 +765,7 @@
       "question": "[97.509] What may be the penalty for a VE who fraudulently administers or certifies an examination?",
       "correct": "A",
       "answers": {
-        "A": "Revocation of the VE’s amateur station license grant and the suspension of the VE’s amateur operator",
+        "A": "Revocation of the VE’s amateur station license grant and the suspension of the VE’s amateur operator license grant",
         "B": "A fine of up to $1,000 per occurrence",
         "C": "A sentence of up to one year in prison",
         "D": "All these choices are correct"
@@ -780,8 +780,8 @@
       "answers": {
         "A": "They must collect and send the documents directly to the FCC",
         "B": "They must collect and submit the documents to the coordinating VEC for grading",
-        "C": "They must submit the application document to the coordinating VEC according to the coordinating",
-        "D": "They must return the documents to the applicant for submission to the FCC according to the FCC"
+        "C": "They must submit the application document to the coordinating VEC according to the coordinating VEC instructions",
+        "D": "They must return the documents to the applicant for submission to the FCC according to the FCC instructions"
       }
     },
     {
@@ -792,7 +792,7 @@
       "correct": "B",
       "answers": {
         "A": "Photocopy all examination documents and forward them to the FCC for processing",
-        "B": "Three VEs must certify that the examinee is qualified for the license grant and that they have",
+        "B": "Three VEs must certify that the examinee is qualified for the license grant and that they have complied with the administering VE requirements",
         "C": "Issue the examinee the new or upgrade license",
         "D": "All these choices are correct"
       }
@@ -819,8 +819,8 @@
       "answers": {
         "A": "None, they must obtain a US license",
         "B": "Full privileges of the General class license on the 80-, 40-, 20-, 15-, and 10-meter bands",
-        "C": "The operating terms and conditions of the Canadian amateur service license, not to exceed US",
-        "D": "Full privileges, up to and including those of the Amateur Extra class license, on the 80-, 40-, 20-, 15-,"
+        "C": "The operating terms and conditions of the Canadian amateur service license, not to exceed US Amateur Extra class license privileges",
+        "D": "Full privileges, up to and including those of the Amateur Extra class license, on the 80-, 40-, 20-, 15-, and 10-meter bands"
       }
     },
     {
@@ -832,7 +832,7 @@
       "answers": {
         "A": "Gain is less than 23 dB when driven by power of 10 watts or less",
         "B": "The equipment dealer assembled it from a kit",
-        "C": "It was manufactured and certificated in a country which has a reciprocal certification agreement with",
+        "C": "It was manufactured and certificated in a country which has a reciprocal certification agreement with the FCC",
         "D": "The amplifier is constructed or modified by an amateur radio operator for use at an amateur station"
       }
     },
@@ -871,8 +871,8 @@
       "answers": {
         "A": "To provide for experimental amateur communications",
         "B": "To allow use of a special event call sign",
-        "C": "To allow a VE group with less than three VEs to administer examinations in a remote, sparsely",
-        "D": "To allow a licensee who has passed an upgrade exam to operate with upgraded privileges while"
+        "C": "To allow a VE group with less than three VEs to administer examinations in a remote, sparsely populated area",
+        "D": "To allow a licensee who has passed an upgrade exam to operate with upgraded privileges while waiting for posting on the FCC database"
       }
     },
     {
@@ -895,7 +895,7 @@
       "question": "[97.113(c)] Which of the following types of amateur station communications are prohibited?",
       "correct": "A",
       "answers": {
-        "A": "Communications transmitted for hire or material compensation, except as otherwise provided in the",
+        "A": "Communications transmitted for hire or material compensation, except as otherwise provided in the rules",
         "B": "Communications that have political content, except as allowed by the Fairness Doctrine",
         "C": "Communications that have religious content",
         "D": "Communications in a language other than English"
@@ -935,9 +935,9 @@
       "correct": "D",
       "answers": {
         "A": "It must produce full legal output when driven by not more than 5 watts of mean RF input power",
-        "B": "It must have received an Underwriters Laboratory certification for electrical safety as well as having",
+        "B": "It must have received an Underwriters Laboratory certification for electrical safety as well as having met IEEE standard 14.101(B)",
         "C": "It must exhibit a gain of less than 23 dB when driven by 10 watts or less",
-        "D": "It must satisfy the FCC’s spurious emission standards when operated at the lesser of 1500 watts or its"
+        "D": "It must satisfy the FCC’s spurious emission standards when operated at the lesser of 1500 watts or its full output power"
       }
     },
     {
@@ -1157,7 +1157,7 @@
       "answers": {
         "A": "The vestigial sideband carries the audio information",
         "B": "The vestigial sideband contains chroma information",
-        "C": "Vestigial sideband reduces the bandwidth while increasing the fidelity of low frequency video",
+        "C": "Vestigial sideband reduces the bandwidth while increasing the fidelity of low frequency video components",
         "D": "Vestigial sideband provides high frequency emphasis to sharpen the picture"
       }
     },
@@ -1170,8 +1170,8 @@
       "answers": {
         "A": "Amplitude modulation in which one complete sideband and a portion of the other are transmitted",
         "B": "A type of modulation in which one sideband is inverted",
-        "C": "Narrow-band FM modulation achieved by filtering one sideband from the audio before frequency",
-        "D": "Spread spectrum modulation achieved by applying FM modulation following single sideband"
+        "C": "Narrow-band FM modulation achieved by filtering one sideband from the audio before frequency modulating the carrier",
+        "D": "Spread spectrum modulation achieved by applying FM modulation following single sideband amplitude modulation"
       }
     },
     {
@@ -1376,7 +1376,7 @@
       "question": "Why do DX stations often transmit and receive on different frequencies?",
       "correct": "D",
       "answers": {
-        "A": "Because the DX station may be transmitting on a frequency that is prohibited to some responding",
+        "A": "Because the DX station may be transmitting on a frequency that is prohibited to some responding stations",
         "B": "To separate the calling stations from the DX station",
         "C": "To improve operating efficiency by reducing interference",
         "D": "All these choices are correct"
@@ -1701,7 +1701,7 @@
       "question": "How do ALE stations establish contact?",
       "correct": "A",
       "answers": {
-        "A": "ALE constantly scans a list of frequencies, activating the radio when the designated call sign is",
+        "A": "ALE constantly scans a list of frequencies, activating the radio when the designated call sign is received",
         "B": "ALE radios monitor an internet site for the frequency they are being paged on",
         "C": "ALE radios send a constant tone code to establish a frequency for future use",
         "D": "ALE radios activate when they hear their signal echoed by back scatter"
@@ -1909,7 +1909,7 @@
       "question": "Where is transequatorial propagation (TEP) most likely to occur?",
       "correct": "A",
       "answers": {
-        "A": "Between points separated by 2,000 miles to 3,000 miles over a path perpendicular to the",
+        "A": "Between points separated by 2,000 miles to 3,000 miles over a path perpendicular to the geomagnetic equator",
         "B": "Between points located 1,500 miles to 2,000 miles apart on the geomagnetic equator",
         "C": "Between points located at each other’s antipode",
         "D": "Through the region where the terminator crosses the geographic equator"
@@ -1948,7 +1948,7 @@
       "question": "What are “extraordinary” and “ordinary” waves?",
       "correct": "B",
       "answers": {
-        "A": "Extraordinary waves exhibit rare long-skip propagation, compared to ordinary waves, which travel",
+        "A": "Extraordinary waves exhibit rare long-skip propagation, compared to ordinary waves, which travel shorter distances",
         "B": "Independently propagating, elliptically polarized waves created in the ionosphere",
         "C": "Long-path and short-path waves",
         "D": "Refracted rays and reflected waves"
@@ -2101,7 +2101,7 @@
       "id": "E3C03",
       "subelement": "E3",
       "group": "E3C",
-      "question": "Which of the following signal paths is most likely to experience high levels of absorption when the A- index or K-index is elevated?",
+      "question": "Which of the following signal paths is most likely to experience high levels of absorption when the A-index or K-index is elevated?",
       "correct": "B",
       "answers": {
         "A": "Transequatorial",
@@ -2197,7 +2197,7 @@
       "answers": {
         "A": "The ratio of X-ray flux to radio flux, correlated to sunspot number",
         "B": "UV emissions at 304 angstroms, correlated to the solar flux index",
-        "C": "The solar wind velocity at an angle of 304 degrees from the solar equator, correlated to geomagnetic",
+        "C": "The solar wind velocity at an angle of 304 degrees from the solar equator, correlated to geomagnetic storms",
         "D": "The solar emission at 304 GHz, correlated to X-ray flare levels"
       }
     },
@@ -2273,7 +2273,7 @@
       "question": "How is compensation of an oscilloscope probe performed?",
       "correct": "A",
       "answers": {
-        "A": "A square wave is displayed, and the probe is adjusted until the horizontal portions of the displayed",
+        "A": "A square wave is displayed, and the probe is adjusted until the horizontal portions of the displayed wave are as nearly flat as possible",
         "B": "A high frequency sine wave is displayed, and the probe is adjusted for maximum amplitude",
         "C": "A frequency standard is displayed, and the probe is adjusted until the deflection time is accurate",
         "D": "A DC voltage standard is displayed, and the probe is adjusted until the displayed voltage is accurate"
@@ -2390,9 +2390,9 @@
       "question": "What is the significance of voltmeter sensitivity expressed in ohms per volt?",
       "correct": "A",
       "answers": {
-        "A": "The full scale reading of the voltmeter multiplied by its ohms per volt rating is the input impedance of",
-        "B": "The reading in volts multiplied by the ohms per volt rating will determine the power drawn by the",
-        "C": "The reading in ohms divided by the ohms per volt rating will determine the voltage applied to the",
+        "A": "The full scale reading of the voltmeter multiplied by its ohms per volt rating is the input impedance of the voltmeter",
+        "B": "The reading in volts multiplied by the ohms per volt rating will determine the power drawn by the device under test",
+        "C": "The reading in ohms divided by the ohms per volt rating will determine the voltage applied to the circuit",
         "D": "The full scale reading in amps divided by ohms per volt rating will determine the size of shunt needed"
       }
     },
@@ -2494,10 +2494,10 @@
       "question": "Which of the following methods measures intermodulation distortion in an SSB transmitter?",
       "correct": "B",
       "answers": {
-        "A": "Modulate the transmitter using two RF signals having non-harmonically related frequencies and",
-        "B": "Modulate the transmitter using two AF signals having non-harmonically related frequencies and",
-        "C": "Modulate the transmitter using two AF signals having harmonically related frequencies and observe",
-        "D": "Modulate the transmitter using two RF signals having harmonically related frequencies and observe"
+        "A": "Modulate the transmitter using two RF signals having non-harmonically related frequencies and observe the RF output with a spectrum analyzer",
+        "B": "Modulate the transmitter using two AF signals having non-harmonically related frequencies and observe the RF output with a spectrum analyzer",
+        "C": "Modulate the transmitter using two AF signals having harmonically related frequencies and observe the RF output with a peak reading wattmeter",
+        "D": "Modulate the transmitter using two RF signals having harmonically related frequencies and observe the RF output with a logic analyzer"
       }
     },
     {
@@ -2530,7 +2530,7 @@
       "id": "E4C02",
       "subelement": "E4",
       "group": "E4C",
-      "question": "Which of the following receiver circuits can be effective in eliminating interference from strong out-of- band signals?",
+      "question": "Which of the following receiver circuits can be effective in eliminating interference from strong out-of-band signals?",
       "correct": "A",
       "answers": {
         "A": "A front-end filter or preselector",
@@ -2637,9 +2637,9 @@
       "question": "What is an advantage of having a variety of receiver bandwidths from which to select?",
       "correct": "C",
       "answers": {
-        "A": "The noise figure of the RF amplifier can be adjusted to match the modulation type, thus increasing",
+        "A": "The noise figure of the RF amplifier can be adjusted to match the modulation type, thus increasing receiver sensitivity",
         "B": "Receiver power consumption can be reduced when wider bandwidth is not required",
-        "C": "Receive bandwidth can be set to match the modulation bandwidth, maximizing signal-to-noise ratio",
+        "C": "Receive bandwidth can be set to match the modulation bandwidth, maximizing signal-to-noise ratio and minimizing interference",
         "D": "Multiple frequencies can be received simultaneously if desired"
       }
     },
@@ -2679,7 +2679,7 @@
         "A": "Two out-of-band signals mixing to generate an in-band spurious signal",
         "B": "In-phase signals cancelling in a mixer resulting in loss of receiver sensitivity",
         "C": "Two digital signals combining from alternate time slots",
-        "D": "Local oscillator phase noise mixing with adjacent strong signals to create interference to desired"
+        "D": "Local oscillator phase noise mixing with adjacent strong signals to create interference to desired signals"
       }
     },
     {
@@ -2702,10 +2702,10 @@
       "question": "What is meant by the blocking dynamic range of a receiver?",
       "correct": "A",
       "answers": {
-        "A": "The difference in dB between the noise floor and the level of an incoming signal that will cause 1 dB",
-        "B": "The minimum difference in dB between the levels of two FM signals that will cause one signal to block",
+        "A": "The difference in dB between the noise floor and the level of an incoming signal that will cause 1 dB of gain compression",
+        "B": "The minimum difference in dB between the levels of two FM signals that will cause one signal to block the other",
         "C": "The difference in dB between the noise floor and the third-order intercept point",
-        "D": "The minimum difference in dB between two signals which produce third-order intermodulation"
+        "D": "The minimum difference in dB between two signals which produce third-order intermodulation products greater than the noise floor"
       }
     },
     {
@@ -2807,9 +2807,9 @@
       "correct": "C",
       "answers": {
         "A": "Signals less than 40 dBm will not generate audible third-order intermodulation products",
-        "B": "The receiver can tolerate signals up to 40 dB above the noise floor without producing third-order",
-        "C": "A pair of 40 dBm input signals will theoretically generate a third-order intermodulation product that",
-        "D": "A pair of 1 mW input signals will produce a third-order intermodulation product that is 40 dB stronger"
+        "B": "The receiver can tolerate signals up to 40 dB above the noise floor without producing third-order intermodulation products",
+        "C": "A pair of 40 dBm input signals will theoretically generate a third-order intermodulation product that has the same output amplitude as either of the input signals",
+        "D": "A pair of 1 mW input signals will produce a third-order intermodulation product that is 40 dB stronger than the input signal"
       }
     },
     {
@@ -2912,7 +2912,7 @@
       "answers": {
         "A": "By installing filter capacitors in series with the alternator leads",
         "B": "By installing a noise suppression resistor and a blocking capacitor at the battery",
-        "C": "By installing a high-pass filter in series with the radio’s power lead and a low-pass filter in parallel with",
+        "C": "By installing a high-pass filter in series with the radio’s power lead and a low-pass filter in parallel with the antenna feed line",
         "D": "By installing ferrite chokes on the charging system leads"
       }
     },
@@ -3120,7 +3120,7 @@
       "answers": {
         "A": "It is at a minimum",
         "B": "It is at a maximum",
-        "C": "It equals 1 divided by the quantity 2 times pi, times the square root of (inductance L multiplied by",
+        "C": "It equals 1 divided by the quantity 2 times pi, times the square root of (inductance L multiplied by capacitance C)",
         "D": "It equals 2 times pi, times the square root of (inductance L multiplied by capacitance C)"
       }
     },
@@ -3718,8 +3718,8 @@
       "answers": {
         "A": "Only P-type semiconductor material can conduct current",
         "B": "Only N-type semiconductor material can conduct current",
-        "C": "Holes in P-type material and electrons in the N-type material are separated by the applied voltage,",
-        "D": "Excess holes in P-type material combine with the electrons in N-type material, converting the entire"
+        "C": "Holes in P-type material and electrons in the N-type material are separated by the applied voltage, widening the depletion region",
+        "D": "Excess holes in P-type material combine with the electrons in N-type material, converting the entire diode into an insulator"
       }
     },
     {
@@ -4068,9 +4068,9 @@
       "correct": "B",
       "answers": {
         "A": "A resistor in a keying circuit used to reduce key clicks",
-        "B": "A resistor connected to the positive or negative supply used to establish a voltage when an input or",
+        "B": "A resistor connected to the positive or negative supply used to establish a voltage when an input or output is an open circuit",
         "C": "A resistor that ensures that an oscillator frequency does not drift",
-        "D": "A resistor connected to an op-amp output that prevents signals from exceeding the power supply"
+        "D": "A resistor connected to an op-amp output that prevents signals from exceeding the power supply voltage"
       }
     },
     {
@@ -4132,10 +4132,10 @@
       "question": "What is piezoelectricity?",
       "correct": "C",
       "answers": {
-        "A": "The ability of materials to generate electromagnetic waves of a certain frequency when voltage is",
-        "B": "A characteristic of materials that have an index of refraction which depends on the polarization of the",
-        "C": "A characteristic of materials that generate a voltage when stressed and that flex when a voltage is",
-        "D": "The ability of materials to generate voltage when an electromagnetic wave of a certain frequency is"
+        "A": "The ability of materials to generate electromagnetic waves of a certain frequency when voltage is applied",
+        "B": "A characteristic of materials that have an index of refraction which depends on the polarization of the electromagnetic wave passing through it",
+        "C": "A characteristic of materials that generate a voltage when stressed and that flex when a voltage is applied",
+        "D": "The ability of materials to generate voltage when an electromagnetic wave of a certain frequency is applied"
       }
     },
     {
@@ -4146,9 +4146,9 @@
       "correct": "A",
       "answers": {
         "A": "Series RLC in parallel with a shunt C representing electrode and stray capacitance",
-        "B": "Parallel RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode",
-        "C": "Series RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode",
-        "D": "Parallel RLC, where C is the series combination of resonance capacitance of the crystal and electrode"
+        "B": "Parallel RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode and stray capacitance",
+        "C": "Series RLC, where C is the parallel combination of resonance capacitance of the crystal and electrode and stray capacitance",
+        "D": "Parallel RLC, where C is the series combination of resonance capacitance of the crystal and electrode and stray capacitance"
       }
     },
     {
@@ -4343,7 +4343,7 @@
         "A": "The ability to retrieve information from a single signal, even in the presence of other strong signals",
         "B": "Extremely high Q factor and high stability over a wide temperature range",
         "C": "Nearly infinite gain, very high input impedance, and very low output impedance",
-        "D": "Controlled gain, low noise figure, and constant input and output impedance over the specified"
+        "D": "Controlled gain, low noise figure, and constant input and output impedance over the specified frequency range"
       }
     },
     {
@@ -4873,10 +4873,10 @@
       "question": "How are the capacitors and inductors of a low-pass filter Pi-network arranged between the network’s input and output?",
       "correct": "D",
       "answers": {
-        "A": "Two inductors are in series between the input and output, and a capacitor is connected between the",
-        "B": "Two capacitors are in series between the input and output, and an inductor is connected between the",
-        "C": "An inductor is connected between the input and ground, another inductor is connected between the",
-        "D": "A capacitor is connected between the input and ground, another capacitor is connected between the"
+        "A": "Two inductors are in series between the input and output, and a capacitor is connected between the two inductors and ground",
+        "B": "Two capacitors are in series between the input and output, and an inductor is connected between the two capacitors and ground",
+        "C": "An inductor is connected between the input and ground, another inductor is connected between the output and ground, and a capacitor is connected between the input and output",
+        "D": "A capacitor is connected between the input and ground, another capacitor is connected between the output and ground, and an inductor is connected between the input and output"
       }
     },
     {
@@ -5135,7 +5135,7 @@
       "answers": {
         "A": "The inverter design does not require an output filter circuit",
         "B": "The control circuitry uses less current, therefore smaller heat sinks are required",
-        "C": "The high frequency inverter design uses much smaller transformers and filter components for an",
+        "C": "The high frequency inverter design uses much smaller transformers and filter components for an equivalent power output",
         "D": "It recovers power from the unused portion of the AC cycle, thus using fewer components"
       }
     },
@@ -5292,7 +5292,7 @@
         "A": "The lowest frequency band that the transmitter or receiver covers",
         "B": "The frequency range occupied by a message signal prior to modulation",
         "C": "The unmodulated bandwidth of the transmitted signal",
-        "D": "The basic oscillator frequency in an FM transmitter that is multiplied to increase the deviation and"
+        "D": "The basic oscillator frequency in an FM transmitter that is multiplied to increase the deviation and carrier frequency"
       }
     },
     {
@@ -5356,7 +5356,7 @@
       "answers": {
         "A": "Software is converted from source code to object code during operation of the receiver",
         "B": "I and Q signals are generated by digital processing without the use of RF amplification",
-        "C": "Incoming RF is digitized by an analog-to-digital converter without being mixed with a local oscillator",
+        "C": "Incoming RF is digitized by an analog-to-digital converter without being mixed with a local oscillator signal",
         "D": "A switching mixer is used to generate I and Q signals directly from the RF input"
       }
     },
@@ -5458,7 +5458,7 @@
       "question": "Why is an anti-aliasing filter required in a decimator?",
       "correct": "A",
       "answers": {
-        "A": "It removes high-frequency signal components that would otherwise be reproduced as lower",
+        "A": "It removes high-frequency signal components that would otherwise be reproduced as lower frequency components",
         "B": "It peaks the response of the decimator, improving bandwidth",
         "C": "It removes low-frequency signal components to eliminate the need for DC restoration",
         "D": "It notches out the sampling frequency to avoid sampling errors"
@@ -5576,7 +5576,7 @@
       "correct": "C",
       "answers": {
         "A": "The output voltage of the op-amp minus its input voltage",
-        "B": "The difference between the output voltage of the op-amp and the input voltage required in the",
+        "B": "The difference between the output voltage of the op-amp and the input voltage required in the immediately following stage",
         "C": "The differential input voltage needed to bring the open loop output voltage to zero",
         "D": "The potential between the amplifier input terminals of the op-amp in an open loop condition"
       }
@@ -5679,9 +5679,9 @@
       "question": "What is an operational amplifier?",
       "correct": "A",
       "answers": {
-        "A": "A high-gain, direct-coupled differential amplifier with very high input impedance and very low output",
-        "B": "A digital audio amplifier whose characteristics are determined by components external to the",
-        "C": "An amplifier used to increase the average output of frequency modulated amateur signals to the legal",
+        "A": "A high-gain, direct-coupled differential amplifier with very high input impedance and very low output impedance",
+        "B": "A digital audio amplifier whose characteristics are determined by components external to the amplifier",
+        "C": "An amplifier used to increase the average output of frequency modulated amateur signals to the legal limit",
         "D": "A RF amplifier used in the UHF and microwave regions"
       }
     },
@@ -5718,9 +5718,9 @@
       "question": "What is a phase-locked loop?",
       "correct": "C",
       "answers": {
-        "A": "An electronic servo loop consisting of a ratio detector, reactance modulator, and voltage-controlled",
+        "A": "An electronic servo loop consisting of a ratio detector, reactance modulator, and voltage-controlled oscillator",
         "B": "An electronic circuit also known as a monostable multivibrator",
-        "C": "An electronic servo loop consisting of a phase detector, a low-pass filter, a voltage-controlled",
+        "C": "An electronic servo loop consisting of a phase detector, a low-pass filter, a voltage-controlled oscillator, and a stable reference oscillator",
         "D": "An electronic circuit consisting of a precision push-pull amplifier with a differential phase input"
       }
     },
@@ -6098,7 +6098,7 @@
         "A": "A frequency modulation technique that uses non-harmonically related frequencies",
         "B": "A bandwidth compression technique using Fourier transforms",
         "C": "A digital mode for narrow-band, slow-speed transmissions",
-        "D": "A digital modulation technique using subcarriers at frequencies chosen to avoid intersymbol"
+        "D": "A digital modulation technique using subcarriers at frequencies chosen to avoid intersymbol interference"
       }
     },
     {
@@ -6124,7 +6124,7 @@
         "A": "The transmitted signal jumps from band to band at a predetermined rate",
         "B": "Dividing the transmitted signal into separate frequency bands that each carry a different data stream",
         "C": "The transmitted signal is divided into packets of information",
-        "D": "Two or more information streams are merged into a digital combiner, which then pulse position"
+        "D": "Two or more information streams are merged into a digital combiner, which then pulse position modulates the transmitter"
       }
     },
     {
@@ -6136,7 +6136,7 @@
       "answers": {
         "A": "Two or more data streams are assigned to discrete sub-carriers on an FM transmitter",
         "B": "Two or more signals are arranged to share discrete time slots of a data transmission",
-        "C": "Two or more data streams share the same channel by transmitting time of transmission as the sub-",
+        "C": "Two or more data streams share the same channel by transmitting time of transmission as the sub-carrier",
         "D": "Two or more signals are quadrature modulated to increase bandwidth efficiency"
       }
     },
@@ -6147,10 +6147,10 @@
       "question": "What is Quadrature Amplitude Modulation or QAM?",
       "correct": "B",
       "answers": {
-        "A": "A technique for digital data compression used in digital television which removes redundancy in the",
-        "B": "Transmission of data by modulating the amplitude of two carriers of the same frequency but 90",
-        "C": "A method of performing single sideband modulation by shifting the phase of the carrier and",
-        "D": "A technique for analog modulation of television video signals using phase modulation and"
+        "A": "A technique for digital data compression used in digital television which removes redundancy in the data by comparing bit amplitudes",
+        "B": "Transmission of data by modulating the amplitude of two carriers of the same frequency but 90 degrees out of phase",
+        "C": "A method of performing single sideband modulation by shifting the phase of the carrier and modulation components of the signal",
+        "D": "A technique for analog modulation of television video signals using phase modulation and compression"
       }
     },
     {
@@ -6369,8 +6369,8 @@
       "correct": "D",
       "answers": {
         "A": "If interference is detected by the receiver, it will signal the transmitter to change frequencies",
-        "B": "RF signals are clipped to generate a wide band of harmonics which provides redundancy to correct",
-        "C": "A binary bit stream is used to shift the phase of an RF carrier very rapidly in a pseudorandom",
+        "B": "RF signals are clipped to generate a wide band of harmonics which provides redundancy to correct errors",
+        "C": "A binary bit stream is used to shift the phase of an RF carrier very rapidly in a pseudorandom sequence",
         "D": "Rapidly varying the frequency of a transmitted signal according to a pseudorandom sequence"
       }
     },
@@ -6459,10 +6459,10 @@
       "question": "What are some of the differences between the Baudot digital code and ASCII?",
       "correct": "B",
       "answers": {
-        "A": "Baudot uses 4 data bits per character, ASCII uses 7 or 8; Baudot uses 1 character as a letters/figures",
-        "B": "Baudot uses 5 data bits per character, ASCII uses 7 or 8; Baudot uses 2 characters as letters/figures",
-        "C": "Baudot uses 6 data bits per character, ASCII uses 7 or 8; Baudot has no letters/figures shift code, ASCII",
-        "D": "Baudot uses 7 data bits per character, ASCII uses 8; Baudot has no letters/figures shift code, ASCII"
+        "A": "Baudot uses 4 data bits per character, ASCII uses 7 or 8; Baudot uses 1 character as a letters/figures shift code, ASCII has no letters/figures code",
+        "B": "Baudot uses 5 data bits per character, ASCII uses 7 or 8; Baudot uses 2 characters as letters/figures shift codes, ASCII has no letters/figures shift code",
+        "C": "Baudot uses 6 data bits per character, ASCII uses 7 or 8; Baudot has no letters/figures shift code, ASCII uses 2 letters/figures shift codes",
+        "D": "Baudot uses 7 data bits per character, ASCII uses 8; Baudot has no letters/figures shift code, ASCII uses 2 letters/figures shift codes"
       }
     },
     {
@@ -6486,8 +6486,8 @@
       "correct": "C",
       "answers": {
         "A": "A calibrated, unidirectional antenna used to make precise antenna gain measurements",
-        "B": "An omnidirectional, horizontally polarized, precisely calibrated antenna used to make field",
-        "C": "A hypothetical, lossless antenna having equal radiation intensity in all directions used as a reference",
+        "B": "An omnidirectional, horizontally polarized, precisely calibrated antenna used to make field measurements of antenna gain",
+        "C": "A hypothetical, lossless antenna having equal radiation intensity in all directions used as a reference for antenna gain",
         "D": "A spacecraft antenna used to direct signals toward Earth"
       }
     },
@@ -6722,7 +6722,7 @@
         "A": "The power radiated from the directional antenna is increased by the gain of the antenna",
         "B": "The power radiated from the directional antenna is stronger by its front-to-back ratio",
         "C": "They are the same",
-        "D": "The power radiated from the isotropic radiator is 2.15 dB greater than that from the directional"
+        "D": "The power radiated from the isotropic radiator is 2.15 dB greater than that from the directional antenna"
       }
     },
     {
@@ -6888,7 +6888,7 @@
       "question": "Which of the following describes a G5RV antenna?",
       "correct": "A",
       "answers": {
-        "A": "A wire antenna center-fed through a specific length of open-wire line connected to a balun and",
+        "A": "A wire antenna center-fed through a specific length of open-wire line connected to a balun and coaxial feed line",
         "B": "A multi-band trap antenna",
         "C": "A phased array antenna consisting of multiple loops",
         "D": "A wide band dipole using shorted coaxial cable for the radiating elements and fed with a 4:1 balun"
@@ -6901,10 +6901,10 @@
       "question": "Which of the following describes a Zepp antenna?",
       "correct": "B",
       "answers": {
-        "A": "A horizontal array capable of quickly changing the direction of maximum radiation by changing",
+        "A": "A horizontal array capable of quickly changing the direction of maximum radiation by changing phasing lines",
         "B": "An end-fed half-wavelength dipole",
         "C": "An omni-directional antenna commonly used for satellite communications",
-        "D": "A vertical array capable of quickly changing the direction of maximum radiation by changing phasing"
+        "D": "A vertical array capable of quickly changing the direction of maximum radiation by changing phasing lines"
       }
     },
     {
@@ -6979,9 +6979,9 @@
       "question": "How can two linearly polarized Yagi antennas be used to produce circular polarization?",
       "correct": "C",
       "answers": {
-        "A": "Stack two Yagis to form an array with the respective elements in parallel planes fed 90 degrees out of",
+        "A": "Stack two Yagis to form an array with the respective elements in parallel planes fed 90 degrees out of phase",
         "B": "Stack two Yagis to form an array with the respective elements in parallel planes fed in phase",
-        "C": "Arrange two Yagis on the same axis and perpendicular to each other with the driven elements at the",
+        "C": "Arrange two Yagis on the same axis and perpendicular to each other with the driven elements at the same point on the boom and fed 90 degrees out of phase",
         "D": "Arrange two Yagis collinear to each other with the driven elements fed 180 degrees out of phase"
       }
     },
@@ -7184,7 +7184,7 @@
       "id": "E9E06",
       "subelement": "E9",
       "group": "E9E",
-      "question": "Which of these transmission line impedances would be suitable for constructing a quarter-wave Q- section for matching a 100-ohm feed point impedance to a 50-ohm transmission line?",
+      "question": "Which of these transmission line impedances would be suitable for constructing a quarter-wave Q-section for matching a 100-ohm feed point impedance to a 50-ohm transmission line?",
       "correct": "C",
       "answers": {
         "A": "50 ohms",
@@ -7306,8 +7306,8 @@
       "answers": {
         "A": "Special shielding material designed for microwave frequencies",
         "B": "Miniature coax used for low power applications",
-        "C": "Short lengths of coax mounted on printed circuit boards to minimize time delay between microwave",
-        "D": "Precision printed circuit conductors above a ground plane that provide constant impedance"
+        "C": "Short lengths of coax mounted on printed circuit boards to minimize time delay between microwave circuits",
+        "D": "Precision printed circuit conductors above a ground plane that provide constant impedance interconnects at microwave frequencies"
       }
     },
     {
@@ -7591,7 +7591,7 @@
       "correct": "B",
       "answers": {
         "A": "It adds capacitive loading, increasing the bandwidth of the antenna",
-        "B": "It eliminates unbalanced capacitive coupling to the antenna’s surroundings, improving the depth of its",
+        "B": "It eliminates unbalanced capacitive coupling to the antenna’s surroundings, improving the depth of its nulls",
         "C": "It eliminates tracking errors caused by strong out-of-band signals",
         "D": "It increases signal strength by providing a better match to the feed line"
       }
@@ -7707,10 +7707,10 @@
       "question": "When evaluating RF exposure levels from your station at a neighbor’s home, what must you do?",
       "correct": "B",
       "answers": {
-        "A": "Ensure signals from your station are less than the controlled maximum permissible exposure (MPE)",
-        "B": "Ensure signals from your station are less than the uncontrolled maximum permissible exposure (MPE)",
-        "C": "Ensure signals from your station are less than the controlled maximum permissible emission (MPE)",
-        "D": "Ensure signals from your station are less than the uncontrolled maximum permissible emission (MPE)"
+        "A": "Ensure signals from your station are less than the controlled maximum permissible exposure (MPE) limits",
+        "B": "Ensure signals from your station are less than the uncontrolled maximum permissible exposure (MPE) limits",
+        "C": "Ensure signals from your station are less than the controlled maximum permissible emission (MPE) limits",
+        "D": "Ensure signals from your station are less than the uncontrolled maximum permissible emission (MPE) limits"
       }
     },
     {
@@ -7733,9 +7733,9 @@
       "question": "When evaluating a site with multiple transmitters operating at the same time, the operators and licensees of which transmitters are responsible for mitigating over-exposure situations?",
       "correct": "C",
       "answers": {
-        "A": "Each transmitter that produces 20 percent or more of its MPE limit in areas where the total MPE limit",
+        "A": "Each transmitter that produces 20 percent or more of its MPE limit in areas where the total MPE limit is exceeded",
         "B": "Each transmitter operating with a duty cycle greater than 25 percent",
-        "C": "Each transmitter that produces 5 percent or more of its MPE limit in areas where the total MPE limit",
+        "C": "Each transmitter that produces 5 percent or more of its MPE limit in areas where the total MPE limit is exceeded",
         "D": "Each transmitter operating with a duty cycle greater than 50 percent"
       }
     },

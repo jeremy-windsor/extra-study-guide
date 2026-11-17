@@ -52,7 +52,7 @@
 **What is the magnitude of the circulating current within the components of a parallel LC circuit at resonance?**
 - A) It is at a minimum
 - **B) It is at a maximum** ✅
-- C) It equals 1 divided by the quantity 2 times pi, times the square root of (inductance L multiplied by
+- C) It equals 1 divided by the quantity 2 times pi, times the square root of (inductance L multiplied by capacitance C)
 - D) It equals 2 times pi, times the square root of (inductance L multiplied by capacitance C)
 
 > In a parallel LC circuit at resonance, the circulating current within the tank — flowing back and forth between the inductor and capacitor — is at its maximum. This internal circulating current equals Q times the current supplied by the source. The source only supplies enough current to replace the small energy lost to the circuit's resistance; the much larger reactive current circulates internally. Physically, energy sloshes back and forth: the capacitor discharges into the inductor, the inductor's collapsing field recharges the capacitor, and the cycle repeats. The Q of the circuit tells you how many times the energy circulates before it's dissipated. A Q of 100 means the circulating current is 100× the source current.

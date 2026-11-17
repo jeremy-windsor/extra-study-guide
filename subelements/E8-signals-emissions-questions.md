@@ -172,7 +172,7 @@
 - A) A frequency modulation technique that uses non-harmonically related frequencies
 - B) A bandwidth compression technique using Fourier transforms
 - C) A digital mode for narrow-band, slow-speed transmissions
-- **D) A digital modulation technique using subcarriers at frequencies chosen to avoid intersymbol** ✅
+- **D) A digital modulation technique using subcarriers at frequencies chosen to avoid intersymbol interference** ✅
 
 > OFDM is a digital modulation technique using subcarriers at frequencies chosen to avoid intersymbol interference. The key word is 'orthogonal' — the subcarrier spacing is chosen so that each subcarrier's peak aligns with zeros of all other subcarriers, eliminating crosstalk without guard bands. This maximizes spectral efficiency.
 
@@ -190,7 +190,7 @@
 - A) The transmitted signal jumps from band to band at a predetermined rate
 - **B) Dividing the transmitted signal into separate frequency bands that each carry a different data stream** ✅
 - C) The transmitted signal is divided into packets of information
-- D) Two or more information streams are merged into a digital combiner, which then pulse position
+- D) Two or more information streams are merged into a digital combiner, which then pulse position modulates the transmitter
 
 > Frequency division multiplexing (FDM) divides the transmitted signal into separate frequency bands, each carrying a different data stream simultaneously. Each data stream is modulated onto its own carrier frequency within the allocated bandwidth. FDM is used in telephone trunk lines, cable TV, and some radio applications. OFDM is a modern digital form of FDM.
 
@@ -198,7 +198,7 @@
 **What is digital time division multiplexing?**
 - A) Two or more data streams are assigned to discrete sub-carriers on an FM transmitter
 - **B) Two or more signals are arranged to share discrete time slots of a data transmission** ✅
-- C) Two or more data streams share the same channel by transmitting time of transmission as the sub-
+- C) Two or more data streams share the same channel by transmitting time of transmission as the sub-carrier
 - D) Two or more signals are quadrature modulated to increase bandwidth efficiency
 
 > Digital time division multiplexing (TDM) arranges two or more signals to share discrete time slots in a data transmission. Each signal gets exclusive use of the full bandwidth during its time slot. Signals take turns transmitting in a regular pattern. TDM is used in digital telephone systems (T1/E1 lines) and some digital radio systems.
@@ -207,10 +207,10 @@
 
 ### E8C01
 **What is Quadrature Amplitude Modulation or QAM?**
-- A) A technique for digital data compression used in digital television which removes redundancy in the
-- **B) Transmission of data by modulating the amplitude of two carriers of the same frequency but 90** ✅
-- C) A method of performing single sideband modulation by shifting the phase of the carrier and
-- D) A technique for analog modulation of television video signals using phase modulation and
+- A) A technique for digital data compression used in digital television which removes redundancy in the data by comparing bit amplitudes
+- **B) Transmission of data by modulating the amplitude of two carriers of the same frequency but 90 degrees out of phase** ✅
+- C) A method of performing single sideband modulation by shifting the phase of the carrier and modulation components of the signal
+- D) A technique for analog modulation of television video signals using phase modulation and compression
 
 > QAM (Quadrature Amplitude Modulation) transmits data by modulating the amplitude of two carriers of the same frequency but 90 degrees out of phase (in quadrature). By independently varying both amplitude and phase, QAM creates a constellation of signal points, each representing a different data symbol. 16-QAM has 16 points = 4 bits per symbol; 64-QAM has 64 points = 6 bits per symbol. Higher-order QAM increases data throughput, but the constellation points are packed closer together, so the receiver needs a better signal-to-noise ratio to distinguish them reliably.
 
@@ -363,8 +363,8 @@
 ### E8D03
 **Which describes spread spectrum frequency hopping?**
 - A) If interference is detected by the receiver, it will signal the transmitter to change frequencies
-- B) RF signals are clipped to generate a wide band of harmonics which provides redundancy to correct
-- C) A binary bit stream is used to shift the phase of an RF carrier very rapidly in a pseudorandom
+- B) RF signals are clipped to generate a wide band of harmonics which provides redundancy to correct errors
+- C) A binary bit stream is used to shift the phase of an RF carrier very rapidly in a pseudorandom sequence
 - **D) Rapidly varying the frequency of a transmitted signal according to a pseudorandom sequence** ✅
 
 > Frequency hopping spread spectrum rapidly changes the transmit frequency according to a pseudorandom pattern. Both ends follow the same hopping sequence so they stay synchronized.
@@ -425,10 +425,10 @@
 
 ### E8D10
 **What are some of the differences between the Baudot digital code and ASCII?**
-- A) Baudot uses 4 data bits per character, ASCII uses 7 or 8; Baudot uses 1 character as a letters/figures
-- **B) Baudot uses 5 data bits per character, ASCII uses 7 or 8; Baudot uses 2 characters as letters/figures** ✅
-- C) Baudot uses 6 data bits per character, ASCII uses 7 or 8; Baudot has no letters/figures shift code, ASCII
-- D) Baudot uses 7 data bits per character, ASCII uses 8; Baudot has no letters/figures shift code, ASCII
+- A) Baudot uses 4 data bits per character, ASCII uses 7 or 8; Baudot uses 1 character as a letters/figures shift code, ASCII has no letters/figures code
+- **B) Baudot uses 5 data bits per character, ASCII uses 7 or 8; Baudot uses 2 characters as letters/figures shift codes, ASCII has no letters/figures shift code** ✅
+- C) Baudot uses 6 data bits per character, ASCII uses 7 or 8; Baudot has no letters/figures shift code, ASCII uses 2 letters/figures shift codes
+- D) Baudot uses 7 data bits per character, ASCII uses 8; Baudot has no letters/figures shift code, ASCII uses 2 letters/figures shift codes
 
 > Baudot uses 5 data bits per character and relies on letters/figures shift codes, while ASCII uses 7 or 8 bits and can represent uppercase, lowercase, and many more symbols.
 

@@ -14,12 +14,12 @@
 
 ### E0A02
 **When evaluating RF exposure levels from your station at a neighbor’s home, what must you do?**
-- A) Ensure signals from your station are less than the controlled maximum permissible exposure (MPE)
-- **B) Ensure signals from your station are less than the uncontrolled maximum permissible exposure (MPE)** ✅
-- C) Ensure signals from your station are less than the controlled maximum permissible emission (MPE)
-- D) Ensure signals from your station are less than the uncontrolled maximum permissible emission (MPE)
+- A) Ensure signals from your station are less than the controlled maximum permissible exposure (MPE) limits
+- **B) Ensure signals from your station are less than the uncontrolled maximum permissible exposure (MPE) limits** ✅
+- C) Ensure signals from your station are less than the controlled maximum permissible emission (MPE) limits
+- D) Ensure signals from your station are less than the uncontrolled maximum permissible emission (MPE) limits
 
-> The correct answer is Ensure signals from your station are less than the uncontrolled maximum permissible exposure (MPE).
+> The correct answer is Ensure signals from your station are less than the uncontrolled maximum permissible exposure (MPE) limits.
 
 ### E0A03
 **Over what range of frequencies are the FCC human body RF exposure limits most restrictive?**
@@ -32,12 +32,12 @@
 
 ### E0A04
 **When evaluating a site with multiple transmitters operating at the same time, the operators and licensees of which transmitters are responsible for mitigating over-exposure situations?**
-- A) Each transmitter that produces 20 percent or more of its MPE limit in areas where the total MPE limit
+- A) Each transmitter that produces 20 percent or more of its MPE limit in areas where the total MPE limit is exceeded
 - B) Each transmitter operating with a duty cycle greater than 25 percent
-- **C) Each transmitter that produces 5 percent or more of its MPE limit in areas where the total MPE limit** ✅
+- **C) Each transmitter that produces 5 percent or more of its MPE limit in areas where the total MPE limit is exceeded** ✅
 - D) Each transmitter operating with a duty cycle greater than 50 percent
 
-> The correct answer is Each transmitter that produces 5 percent or more of its MPE limit in areas where the total MPE limit.
+> The correct answer is Each transmitter that produces 5 percent or more of its MPE limit in areas where the total MPE limit is exceeded.
 
 ### E0A05
 **What hazard is created by operating at microwave frequencies?**

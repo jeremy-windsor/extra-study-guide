@@ -6,8 +6,8 @@
 ### E9A01
 **What is an isotropic radiator?**
 - A) A calibrated, unidirectional antenna used to make precise antenna gain measurements
-- B) An omnidirectional, horizontally polarized, precisely calibrated antenna used to make field
-- **C) A hypothetical, lossless antenna having equal radiation intensity in all directions used as a reference** ✅
+- B) An omnidirectional, horizontally polarized, precisely calibrated antenna used to make field measurements of antenna gain
+- **C) A hypothetical, lossless antenna having equal radiation intensity in all directions used as a reference for antenna gain** ✅
 - D) A spacecraft antenna used to direct signals toward Earth
 
 > An isotropic radiator is a hypothetical, lossless antenna that radiates equally in all directions — a perfect sphere of radiation. It doesn't physically exist but serves as a mathematical reference (0 dBi) for expressing antenna gain. All real antennas have directional patterns. The isotropic radiator is purely a theoretical construct used in antenna engineering calculations.
@@ -172,7 +172,7 @@
 - A) The power radiated from the directional antenna is increased by the gain of the antenna
 - B) The power radiated from the directional antenna is stronger by its front-to-back ratio
 - **C) They are the same** ✅
-- D) The power radiated from the isotropic radiator is 2.15 dB greater than that from the directional
+- D) The power radiated from the isotropic radiator is 2.15 dB greater than that from the directional antenna
 
 > A lossless directional antenna and an isotropic radiator, driven by the same power, radiate the SAME total power. The directional antenna doesn't create power — it concentrates it in certain directions at the expense of others. Gain means power is redirected, not amplified. Total radiated power is identical; the directional antenna just puts more of it where you want it.
 
@@ -288,7 +288,7 @@
 
 ### E9C09
 **Which of the following describes a G5RV antenna?**
-- **A) A wire antenna center-fed through a specific length of open-wire line connected to a balun and** ✅
+- **A) A wire antenna center-fed through a specific length of open-wire line connected to a balun and coaxial feed line** ✅
 - B) A multi-band trap antenna
 - C) A phased array antenna consisting of multiple loops
 - D) A wide band dipole using shorted coaxial cable for the radiating elements and fed with a 4:1 balun
@@ -297,10 +297,10 @@
 
 ### E9C10
 **Which of the following describes a Zepp antenna?**
-- A) A horizontal array capable of quickly changing the direction of maximum radiation by changing
+- A) A horizontal array capable of quickly changing the direction of maximum radiation by changing phasing lines
 - **B) An end-fed half-wavelength dipole** ✅
 - C) An omni-directional antenna commonly used for satellite communications
-- D) A vertical array capable of quickly changing the direction of maximum radiation by changing phasing
+- D) A vertical array capable of quickly changing the direction of maximum radiation by changing phasing lines
 
 > A Zepp antenna is an end-fed half-wavelength dipole. Originally used on Zeppelins (airships), it was fed from the end through open-wire line. An end-fed half-wave has very high impedance at the feed point (several thousand ohms), requiring a matching network or transformer. Modern 'end-fed half-wave' (EFHW) antennas use a 49:1 transformer for this matching.
 
@@ -353,9 +353,9 @@
 
 ### E9D02
 **How can two linearly polarized Yagi antennas be used to produce circular polarization?**
-- A) Stack two Yagis to form an array with the respective elements in parallel planes fed 90 degrees out of
+- A) Stack two Yagis to form an array with the respective elements in parallel planes fed 90 degrees out of phase
 - B) Stack two Yagis to form an array with the respective elements in parallel planes fed in phase
-- **C) Arrange two Yagis on the same axis and perpendicular to each other with the driven elements at the** ✅
+- **C) Arrange two Yagis on the same axis and perpendicular to each other with the driven elements at the same point on the boom and fed 90 degrees out of phase** ✅
 - D) Arrange two Yagis collinear to each other with the driven elements fed 180 degrees out of phase
 
 > To produce circular polarization from two Yagis, arrange them on the same boom axis, perpendicular to each other (crossed), with the driven elements at the same location and fed 90° out of phase. One Yagi handles horizontal and the other handles vertical polarization. The 90° phase difference rotates the combined field vector, creating circular polarization. This is standard for satellite work on VHF/UHF.
@@ -498,7 +498,7 @@
 > A beta (hairpin) matching system requires the driven element to be electrically shorter than 1/2 wavelength, presenting capacitive reactance at the feed point. The hairpin (a short-circuited stub of wire across the feed point) adds inductive reactance to cancel the capacitive reactance. If the element were inductive, you'd need a capacitor instead — but the beta match specifically uses an inductive hairpin, so the element must be capacitive.
 
 ### E9E06
-**Which of these transmission line impedances would be suitable for constructing a quarter-wave Q- section for matching a 100-ohm feed point impedance to a 50-ohm transmission line?**
+**Which of these transmission line impedances would be suitable for constructing a quarter-wave Q-section for matching a 100-ohm feed point impedance to a 50-ohm transmission line?**
 - A) 50 ohms
 - B) 62 ohms
 - **C) 75 ohms** ✅
@@ -584,8 +584,8 @@
 **What is microstrip?**
 - A) Special shielding material designed for microwave frequencies
 - B) Miniature coax used for low power applications
-- C) Short lengths of coax mounted on printed circuit boards to minimize time delay between microwave
-- **D) Precision printed circuit conductors above a ground plane that provide constant impedance** ✅
+- C) Short lengths of coax mounted on printed circuit boards to minimize time delay between microwave circuits
+- **D) Precision printed circuit conductors above a ground plane that provide constant impedance interconnects at microwave frequencies** ✅
 
 > Microstrip is a precision printed circuit conductor above a ground plane that provides constant impedance. It's a flat conductor trace on one side of a dielectric substrate with a ground plane on the other side. The impedance is determined by the trace width, substrate thickness, and dielectric constant. Microstrip is the standard transmission line technology for microwave circuits on PCBs.
 
@@ -785,7 +785,7 @@
 ### E9H04
 **What is the purpose of placing an electrostatic shield around a small-loop direction-finding antenna?**
 - A) It adds capacitive loading, increasing the bandwidth of the antenna
-- **B) It eliminates unbalanced capacitive coupling to the antenna’s surroundings, improving the depth of its** ✅
+- **B) It eliminates unbalanced capacitive coupling to the antenna’s surroundings, improving the depth of its nulls** ✅
 - C) It eliminates tracking errors caused by strong out-of-band signals
 - D) It increases signal strength by providing a better match to the feed line
 

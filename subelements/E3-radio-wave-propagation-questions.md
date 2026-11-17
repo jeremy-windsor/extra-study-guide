@@ -133,12 +133,12 @@
 
 ### E3B01
 **Where is transequatorial propagation (TEP) most likely to occur?**
-- **A) Between points separated by 2,000 miles to 3,000 miles over a path perpendicular to the** ✅
+- **A) Between points separated by 2,000 miles to 3,000 miles over a path perpendicular to the geomagnetic equator** ✅
 - B) Between points located 1,500 miles to 2,000 miles apart on the geomagnetic equator
 - C) Between points located at each other’s antipode
 - D) Through the region where the terminator crosses the geographic equator
 
-> The correct answer is Between points separated by 2,000 miles to 3,000 miles over a path perpendicular to the.
+> The correct answer is Between points separated by 2,000 miles to 3,000 miles over a path perpendicular to the geomagnetic equator.
 
 ### E3B02
 **What is the approximate maximum range for signals using transequatorial propagation?**
@@ -160,7 +160,7 @@
 
 ### E3B04
 **What are “extraordinary” and “ordinary” waves?**
-- A) Extraordinary waves exhibit rare long-skip propagation, compared to ordinary waves, which travel
+- A) Extraordinary waves exhibit rare long-skip propagation, compared to ordinary waves, which travel shorter distances
 - **B) Independently propagating, elliptically polarized waves created in the ionosphere** ✅
 - C) Long-path and short-path waves
 - D) Refracted rays and reflected waves
@@ -269,7 +269,7 @@
 > The correct answer is Increasing disturbance of the geomagnetic field.
 
 ### E3C03
-**Which of the following signal paths is most likely to experience high levels of absorption when the A- index or K-index is elevated?**
+**Which of the following signal paths is most likely to experience high levels of absorption when the A-index or K-index is elevated?**
 - A) Transequatorial
 - **B) Through the auroral oval** ✅
 - C) Sporadic-E
@@ -335,7 +335,7 @@
 **What does the 304A solar parameter measure?**
 - A) The ratio of X-ray flux to radio flux, correlated to sunspot number
 - **B) UV emissions at 304 angstroms, correlated to the solar flux index** ✅
-- C) The solar wind velocity at an angle of 304 degrees from the solar equator, correlated to geomagnetic
+- C) The solar wind velocity at an angle of 304 degrees from the solar equator, correlated to geomagnetic storms
 - D) The solar emission at 304 GHz, correlated to X-ray flare levels
 
 > UV emissions at 304 angstroms, correlated to the solar flux index is the correct term or definition for this question.
