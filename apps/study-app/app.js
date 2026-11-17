@@ -55,7 +55,6 @@ const EXAM_PASS = 37;
 const EXAM_TIME = 37 * 60; // seconds
 
 // Per-subelement exam question distribution
-const EXAM_WEIGHTS = { E1:6, E2:5, E3:3, E4:5, E5:4, E6:6, E7:8, E8:4, E9:8, E0:1 };
 
 const BADGES = [
   { id: 'first_flip', icon: '🃏', name: 'First Flip', desc: 'Flip your first flashcard' },
@@ -158,6 +157,7 @@ function normalizeSavedState(saved) {
       if (!date) return null;
       return {
         score, total, pct, date,
+        mode: test.mode === 'drill' ? 'drill' : 'exam',
         wrong: Array.isArray(test.wrong)
           ? test.wrong.filter(qid => typeof qid === 'string').slice(0, total)
           : [],
@@ -843,13 +843,22 @@ function showTestStart() {
   if (testTimer) { clearInterval(testTimer); testTimer = null; }
 }
 
-function buildTestDeck() {
-  const deck = [];
-  for (const [se, count] of Object.entries(EXAM_WEIGHTS)) {
-    const pool = QUESTION_POOL.filter(q => q.id.startsWith(se));
-    const shuffled = shuffle([...pool]);
-    deck.push(...shuffled.slice(0, count));
+// Two test modes:
+//  'exam'  - like the real exam: one random question from each of the
+//            50 groups (E1A, E1B, ... E0A).
+//  'drill' - 50 questions drawn at random from the whole pool, so some
+//            groups can repeat and others are skipped.
+let testMode = 'exam';
+
+function buildTestDeck(mode = 'exam') {
+  if (mode === 'drill') {
+    return shuffle([...QUESTION_POOL]).slice(0, EXAM_TOTAL);
   }
+  const byGroup = {};
+  for (const q of QUESTION_POOL) {
+    (byGroup[q.group] ||= []).push(q);
+  }
+  const deck = Object.values(byGroup).map(qs => qs[Math.floor(Math.random() * qs.length)]);
   return shuffle(deck);
 }
 
@@ -861,8 +870,9 @@ function shuffle(arr) {
   return arr;
 }
 
-function startTest() {
-  testQuestions = buildTestDeck();
+function startTest(mode) {
+  if (mode === 'exam' || mode === 'drill') testMode = mode;
+  testQuestions = buildTestDeck(testMode);
   testAnswers = new Array(EXAM_TOTAL).fill(-1);
   testRevealed = new Array(EXAM_TOTAL).fill(false);
   testCurrentQ = 0;
@@ -1020,7 +1030,7 @@ function submitTest() {
   const pct = Math.round(correct / EXAM_TOTAL * 100);
   const pass = correct >= EXAM_PASS;
 
-  state.tests.push({ score: correct, total: EXAM_TOTAL, pct, date: new Date().toISOString(), wrong: wrongQids });
+  state.tests.push({ score: correct, total: EXAM_TOTAL, pct, date: new Date().toISOString(), wrong: wrongQids, mode: testMode });
   saveState();
   checkBadges();
 
@@ -1078,7 +1088,7 @@ function renderProgress() {
       return `<div class="history-item">
         <div class="history-score ${pass?'pass':'fail'}">${escapeHtml(t.score)}/${EXAM_TOTAL}</div>
         <div class="history-info">
-          <div>${escapeHtml(t.pct)}% · ${pass ? '✓ Pass' : '✗ Fail'}</div>
+          <div>${escapeHtml(t.pct)}% · ${pass ? '✓ Pass' : '✗ Fail'}${t.mode === 'drill' ? ' · Drill' : ''}</div>
           <div class="history-date">${escapeHtml(dateStr)}</div>
         </div>
       </div>`;
@@ -1876,7 +1886,7 @@ function handleAction(actionEl) {
     case 'flashcard-next': fcAdvanceNext(); return;
     case 'restart-flashcards': restartFlashcards(); return;
     case 'show-flashcard-menu': showFlashcardMenu(); return;
-    case 'start-test': startTest(); return;
+    case 'start-test': startTest(actionEl.dataset.mode); return;
     case 'test-prev': testPrev(); return;
     case 'test-next': testNext(); return;
     case 'show-test-answer': showTestAnswer(); return;

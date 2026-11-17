@@ -2,12 +2,16 @@
 """
 Extra Class Ham Radio Practice Exam
 
-Simulates the real FCC Extra exam: 50 questions drawn randomly from the
-2024-2028 question pool, weighted by subelement (same distribution as the
-actual exam). Interactive CLI — no dependencies beyond stdlib.
+Simulates the real FCC Extra exam: 50 questions from the 2024-2028
+question pool, one random question from each of the 50 groups, the same
+way the real exam is built. Interactive CLI — no dependencies beyond stdlib.
+
+Use --drill for 50 questions drawn at random from the whole pool instead
+(some groups may repeat and others may be skipped).
 
 Usage:
     python3 scripts/practice-test.py
+    python3 scripts/practice-test.py --drill
     python3 scripts/practice-test.py --pool pools/2024-2028/questions.json
     python3 scripts/practice-test.py --quick
     python3 scripts/practice-test.py --stats
@@ -77,23 +81,28 @@ def load_pool(pool_path: str) -> list[dict]:
 
 
 def select_exam_questions(pool: list[dict]) -> list[dict]:
-    """Select 50 questions weighted by subelement, matching real exam distribution."""
-    by_subelement: dict[str, list[dict]] = {}
-    for q in pool:
-        sub = q["subelement"]
-        by_subelement.setdefault(sub, []).append(q)
+    """Select 50 questions the way the real exam does: one from each group.
 
-    selected: list[dict] = []
-    for sub, count in EXAM_WEIGHTS.items():
-        available = by_subelement.get(sub, [])
-        if len(available) < count:
-            print(f"Warning: {sub} has only {len(available)} questions, need {count}")
-            selected.extend(available)
-        else:
-            selected.extend(random.sample(available, count))
+    The Extra pool has 50 groups (E1A, E1B, ... E0A). The real exam takes
+    exactly one question from each group, which also gives the right
+    number of questions per subelement.
+    """
+    by_group: dict[str, list[dict]] = {}
+    for q in pool:
+        by_group.setdefault(q["group"], []).append(q)
+
+    if len(by_group) != TOTAL_QUESTIONS:
+        print(f"Warning: pool has {len(by_group)} groups, expected {TOTAL_QUESTIONS}")
+
+    selected = [random.choice(qs) for qs in by_group.values()]
 
     random.shuffle(selected)
     return selected
+
+
+def select_drill_questions(pool: list[dict]) -> list[dict]:
+    """Select 50 questions at random from the whole pool (drill mode)."""
+    return random.sample(pool, min(TOTAL_QUESTIONS, len(pool)))
 
 
 def format_question(num: int, total: int, question: dict) -> str:
@@ -127,14 +136,17 @@ def get_answer() -> str:
         print("  Please enter A, B, C, or D (or Q to quit)")
 
 
-def run_exam(questions: list[dict]) -> None:
+def run_exam(questions: list[dict], drill: bool = False) -> None:
     """Run a full interactive practice exam."""
     print()
     print("╔══════════════════════════════════════════════════╗")
     print("║      Extra Class Amateur Radio Practice Exam      ║")
     print("║                                                    ║")
     print("║  50 questions • 37 to pass (74%)                   ║")
-    print("║  Same subelement weights as the real exam          ║")
+    if drill:
+        print("║  Drill: 50 random questions from the whole pool    ║")
+    else:
+        print("║  One question per group, like the real exam        ║")
     print("║                                                    ║")
     print("║  Enter A, B, C, or D for each question             ║")
     print("║  Press Q at any time to quit                       ║")
@@ -331,14 +343,15 @@ def main() -> None:
         show_stats(pool)
         return
 
-    questions = select_exam_questions(pool)
+    drill = "--drill" in args
+    questions = select_drill_questions(pool) if drill else select_exam_questions(pool)
 
     if quick:
         run_quick(questions)
         return
 
     try:
-        run_exam(questions)
+        run_exam(questions, drill=drill)
     except KeyboardInterrupt:
         print("\n\nExam cancelled.")
         sys.exit(0)

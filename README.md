@@ -46,7 +46,7 @@ The fastest way to study — a browser-based app that works on your phone, table
 | Feature | |
 |---------|---|
 | **Flashcard mode** | Tap through all questions with instant answer reveal |
-| **Practice exams** | Timed 50-question tests drawn randomly from the real pool |
+| **Practice exams** | Timed 50-question tests: one question per group like the real exam, or a fully random Drill mode |
 | **Section study** | Drill down into individual subelements and groups |
 | **Weak areas** | Automatically focuses on questions you've missed |
 | **Progress tracking** | Mastery tracking, streaks, and achievements |
@@ -110,10 +110,11 @@ Start with the study guide to learn the material, then drill the question bank t
 ### Practice Test
 
 ```bash
-python3 scripts/practice-test.py
+python3 scripts/practice-test.py          # one question per group, like the real exam
+python3 scripts/practice-test.py --drill  # 50 questions at random from the whole pool
 ```
 
-Generates a random 50-question exam from the real pool, scores it, and shows which areas need work.
+Generates a 50-question exam from the real pool, scores it, and shows which areas need work.
 
 ### Audio Study Guide
 

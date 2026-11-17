@@ -1003,11 +1003,19 @@ button:focus-visible, .nav-btn:focus-visible, .quick-btn:focus-visible,
       <div class="card mt-4">
         <div class="label">Real Exam Format</div>
         <p style="margin-top:8px;font-size:14px;color:var(--text2);line-height:1.6">
-          Questions are randomly drawn from the official FCC Extra class pool,
-          weighted the same as the real exam. A 37-minute timer keeps you on pace.
+          Like the real exam: one random question from each of the 50 groups
+          in the official FCC Extra class pool. A 37-minute timer keeps you on pace.
         </p>
       </div>
-      <button class="btn btn-primary btn-full mt-4" data-action="start-test">Start Exam</button>
+      <button class="btn btn-primary btn-full mt-4" data-action="start-test" data-mode="exam">Start Exam</button>
+      <div class="card mt-4">
+        <div class="label">Drill Mode</div>
+        <p style="margin-top:8px;font-size:14px;color:var(--text2);line-height:1.6">
+          50 questions drawn at random from the whole pool. Some groups may
+          repeat and others may be skipped. Good for extra practice.
+        </p>
+      </div>
+      <button class="btn btn-secondary btn-full mt-4" data-action="start-test" data-mode="drill">Start Drill</button>
     </div>
 
     <div id="test-active" style="display:none">
