@@ -226,7 +226,6 @@ function applyTheme(theme) {
   }
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   const btn = document.getElementById('theme-btn');
-  btn.textContent = isDark ? '☀️' : '🌙';
   btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
 }
 
