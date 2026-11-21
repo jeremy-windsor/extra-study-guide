@@ -214,6 +214,15 @@ svg.icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: ro
 /* Formula button now lives in the top bar */
 #formula-fab.hidden { display: none; }
 
+/* GitHub repo link in the top bar: a link styled like the icon buttons */
+a.icon-btn { text-decoration: none; }
+svg.icon.icon-solid { fill: currentColor; stroke: none; }
+/* Three top-bar buttons: slim them on the smallest phones so the title stays on one line */
+@media (max-width: 379px) {
+  .topbar-actions { gap: 6px; }
+  #topbar .icon-btn, #theme-btn { width: 40px; height: 40px; }
+}
+
 /* ===== BOTTOM NAV (phones / tablets) ===== */
 #nav {
   position: fixed;

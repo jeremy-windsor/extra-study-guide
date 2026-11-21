@@ -1,6 +1,6 @@
 // Amateur Extra Class Ham Radio Study PWA - Service Worker
 const CACHE_PREFIX = 'hamradio-extra-study-app';
-const CACHE_VERSION = '2026-11-19-redesign';
+const CACHE_VERSION = '2026-11-21-github-link';
 const CACHE_NAME = `${CACHE_PREFIX}-${CACHE_VERSION}`;
 const ASSETS = [
   './',
